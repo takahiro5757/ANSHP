@@ -1,0 +1,49 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Node modules (if any)
+node_modules/
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Build outputs (if any)
+dist/
+build/
+deploy/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Cache
+.cache/
+
+# Backup files
+*.bak
+*.backup
+buckpu0516/
+
+# Vendor files
+vendor/
+
+# OS generated files
+Icon? 

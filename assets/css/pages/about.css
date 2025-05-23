@@ -1,0 +1,547 @@
+/**
+ * ABOUT USページ用スタイル
+ */
+
+/* 全体の余白調整 */
+.section {
+    padding: 60px 0;
+}
+
+.section-with-number {
+    padding: 60px 0;
+}
+
+/* メッセージコンテナのスタイル調整 */
+.message-container {
+    position: relative;
+    margin: 2rem 0 3rem;
+}
+
+.message-box {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.message-box:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.message-content {
+    padding: 3rem;
+    position: relative;
+}
+
+.message-content p {
+    margin-bottom: 1.8rem;
+    line-height: 2;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.message-content p:last-child {
+    margin-bottom: 0;
+}
+
+.message-decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-blue);
+}
+
+/* CEOメッセージセクションのスタイル改善 */
+.ceo-message {
+    background: linear-gradient(135deg, #f8f9ff, #f1f7ff);
+    padding: 2.5rem 0;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+}
+
+.ceo-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../images/bg-dots.webp') repeat;
+    opacity: 0.08;
+    z-index: 0;
+}
+
+.ceo-image {
+    text-align: center;
+    margin-bottom: 1rem;
+    perspective: 1000px;
+}
+
+.ceo-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 4px solid white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s ease;
+    transform: rotateY(0);
+}
+
+.ceo-image img:hover {
+    transform: scale(1.05) rotateY(10deg);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ceo-name {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #000000, #4A7BD1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ceo-title {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.ceo-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    opacity: 0.85;
+}
+
+.highlight-box {
+    background: rgba(255, 255, 255, 0.95);
+    border-left: 4px solid #4A7BD1;
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border-radius: 0 10px 10px 0;
+    position: relative;
+}
+
+.highlight-box::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 5rem;
+    opacity: 0.1;
+    font-family: serif;
+}
+
+.highlight-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* 会社概要コンテナのスタイル改善 */
+.company-profile {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    transition: all 0.5s ease;
+}
+
+.company-profile:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+}
+
+.profile-header {
+    background: linear-gradient(135deg, #000000, #4A7BD1);
+    color: white;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.profile-content {
+    padding: 2.5rem;
+}
+
+.profile-table {
+    width: 100%;
+}
+
+.profile-table th {
+    padding: 1.5rem 0;
+    width: 40%;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.profile-table td {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.profile-table tr:last-child th,
+.profile-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* 会社概要セクションの背景スタイル */
+.company-section {
+    background-color: #f9f9f9;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    margin-top: -1px;
+    padding-bottom: 80px;
+}
+
+.company-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: rgba(74, 123, 209, 0.05);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.company-section::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 400px;
+    height: 400px;
+    background: rgba(74, 123, 209, 0.05);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* メッセージ導入部分のスタイル */
+.message-intro {
+    position: relative;
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+}
+
+.message-lead {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.message-quote {
+    font-size: 2rem;
+    color: #4A7BD1;
+    opacity: 0.6;
+    display: inline-block;
+    margin: 0 0.3rem;
+}
+
+/* ビジョンカードのスタイル */
+.vision-row {
+    margin-bottom: 2rem;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
+}
+
+/* 企業理念セクションの強化 */
+.philosophy-section {
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+
+.philosophy-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+    margin: 1.5rem 0;
+    transition: all 0.4s ease;
+    z-index: 1;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.philosophy-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
+}
+
+.philosophy-card::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(74, 144, 226, 0.05);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.philosophy-card::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    width: 180px;
+    height: 180px;
+    background: rgba(74, 144, 226, 0.03);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.philosophy-icon {
+    font-size: 2.2rem;
+    color: #4A7BD1;
+    margin-bottom: 1rem;
+    display: inline-block;
+    opacity: 0.9;
+}
+
+.philosophy-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    background: linear-gradient(135deg, #000000, #4A7BD1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.philosophy-text {
+    font-size: 1.1rem;
+    line-height: 2;
+    opacity: 0.9;
+}
+
+/* ビジョンカードのスタイル */
+.vision-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem 1.2rem;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    height: 100%;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.vision-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #4A7BD1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.vision-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.vision-card:hover::before {
+    transform: scaleX(1);
+}
+
+.vision-icon {
+    font-size: 2rem;
+    color: #4A7BD1;
+    margin-bottom: 1rem;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background: rgba(74, 123, 209, 0.1);
+    display: inline-block;
+    transition: all 0.4s ease;
+}
+
+.vision-card:hover .vision-icon {
+    background: #4A7BD1;
+    color: white;
+    transform: rotateY(360deg);
+}
+
+.vision-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--primary-color);
+}
+
+/* ハイライトボックスのアイコン */
+.highlight-icon {
+    font-size: 1.8rem;
+    color: #4A7BD1;
+    margin-bottom: 0.8rem;
+    opacity: 0.9;
+}
+
+.emphasis {
+    font-weight: 700;
+    color: #4A7BD1;
+    background: rgba(74, 123, 209, 0.08);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+}
+
+/* 署名エリア */
+.ceo-signature {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.signature-img {
+    max-width: 150px;
+    height: auto;
+    margin-top: 0.8rem;
+    opacity: 0.9;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .section, .section-with-number {
+        padding: 60px 0;
+    }
+    
+    .ceo-message {
+        padding: 3rem 0;
+    }
+    
+    .page-hero {
+        height: 500px;
+    }
+    
+    .page-hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .page-hero .lead {
+        font-size: 1.1rem;
+    }
+    
+    .company-profile {
+        margin-bottom: 2rem;
+    }
+    
+    .philosophy-card {
+        padding: 2rem;
+    }
+}
+
+/* ページタイトル背景 */
+.about-bg {
+    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 144, 226, 0.6)), url('../../assets/images/hero/assets_task_01jv471sbnewdb6btek38bfyh9_1747119645_img_1.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+/* スクロールインディケーターを非表示に */
+.scroll-indicator {
+    display: none !important;
+}
+
+/* body要素の横幅制限を解除 */
+body {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+/* セクションの最大幅を制限 */
+.section .container {
+    max-width: 1100px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 1.5s infinite;
+    z-index: 10;
+}
+
+.scroll-indicator i {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.scroll-indicator span {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translate(-50%, 10px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, 0);
+        opacity: 0.6;
+    }
+}

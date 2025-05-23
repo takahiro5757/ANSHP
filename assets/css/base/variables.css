@@ -1,0 +1,42 @@
+/**
+ * 変数定義ファイル
+ * プロジェクト全体で使用する変数を定義
+ */
+
+:root {
+  /* カラー */
+  --primary-color: #000000;    /* アクセントカラー（黒） */
+  --secondary-color: #4A7BD1;  /* メインカラー（青） */
+  --light-blue: #E6ECF9;       /* あわい青 */
+  --text-color: #333333;       /* 本文テキスト */
+  --light-gray: #f8f9fa;       /* 薄いグレー背景 */
+  --dark-gray: #343a40;        /* 濃いグレー */
+  --white: #FFFFFF;            /* 白 */
+  
+  /* グラデーション */
+  --gradient-blue: url('/assets/images/backgrounds/blue-gradient.webp');  /* 青系グラデーション */
+  --gradient-blue-light: url('/assets/images/backgrounds/blue-gradient.webp'); /* 薄い青系グラデーション */
+  --gradient-text: url('/assets/images/backgrounds/blue-gradient.webp'); /* テキスト用グラデーション */
+  --gradient-text-animated: url('/assets/images/backgrounds/blue-gradient.webp'); /* アニメーション用グラデーション */
+  --gradient-primary: url('/assets/images/backgrounds/blue-gradient.webp');
+  --gradient-accent: url('/assets/images/backgrounds/blue-gradient.webp');
+  
+  /* 背景画像 */
+  --bg-gradation: url('/assets/images/backgrounds/gradation.png');
+  --bg-gradation2: url('/assets/images/backgrounds/gradation2.png');
+  
+  /* スペーシング */
+  --section-padding: 160px 0;  /* セクション余白 */
+  --header-height: 80px;       /* ヘッダーの高さ */
+  
+  /* フォントサイズ */
+  --font-size-xl: 5rem;        /* 大きな見出し用 */
+  --font-size-l: 3rem;         /* セクションタイトル用 */
+  --font-size-m: 1.5rem;       /* サブタイトル用 */
+  --font-size-base: 1rem;      /* 本文用 */
+  
+  /* アニメーション時間 */
+  --transition-fast: 0.3s;
+  --transition-medium: 0.5s;
+  --transition-slow: 0.8s;
+}

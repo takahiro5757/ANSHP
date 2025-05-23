@@ -1,0 +1,534 @@
+/**
+ * 採用情報ページ用スタイル
+ */
+
+/* セクション番号表示の強化 */
+.section-with-number {
+    position: relative;
+    padding: 60px 0;
+    margin-bottom: 30px;
+}
+
+.section-with-number::before {
+    content: attr(data-number);
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 12rem;
+    font-weight: 900;
+    color: rgba(74, 144, 226, 0.1);
+    line-height: 1;
+    z-index: -1;
+    opacity: 1;
+}
+
+/* アニメーション要素 */
+.animate-child {
+    transition: all 0.8s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.animate-child.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.zoom-in {
+    transition: all 0.8s ease;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.zoom-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.fade-in {
+    transition: all 0.8s ease;
+    opacity: 0;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+.fade-in-up {
+    transition: all 0.8s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rotate-in {
+    transition: all 0.8s ease;
+    opacity: 0;
+    transform: rotateY(-90deg);
+}
+
+.rotate-in.visible {
+    opacity: 1;
+    transform: rotateY(0);
+}
+
+/* カード強化 */
+.card-3d {
+    perspective: 1000px;
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+.card-3d-inner {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.card-3d-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, rgba(74, 144, 226, 0.05), rgba(0, 0, 0, 0.02));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+}
+
+.card-3d:hover .card-3d-inner {
+    transform: translateY(-15px) rotateX(5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-3d:hover .card-3d-inner::before {
+    opacity: 1;
+}
+
+.campaign-girl-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.campaign-girl-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-3d:hover .campaign-girl-image-container {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-3d:hover .campaign-girl-image-container img {
+    transform: scale(1.05);
+}
+
+.btn-lig {
+    position: relative;
+    display: inline-block;
+    padding: 10px 25px;
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.btn-lig::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.btn-lig:hover {
+    color: var(--white);
+    border-color: transparent;
+}
+
+.btn-lig:hover::after {
+    height: 100%;
+}
+
+/* メッセージボックスのスタイル強化 */
+.message-container {
+    margin: 40px 0;
+}
+
+.message-box {
+    position: relative;
+    background: linear-gradient(145deg, #ffffff, #f9f9f9);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.message-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    border-radius: 15px 0 0 15px;
+}
+
+.message-content {
+    position: relative;
+    z-index: 2;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.message-content p {
+    margin-bottom: 15px;
+}
+
+.message-content p:last-child {
+    margin-bottom: 0;
+}
+
+.message-decoration {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.1), transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* 募集職種カードのスタイル */
+.recruit-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 50px;
+    padding: 30px;
+}
+
+.recruit-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    transition: all 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: center;
+}
+
+.recruit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.recruit-card:hover::before {
+    transform: scaleX(1);
+}
+
+.recruit-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    height: 320px;
+}
+
+.recruit-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.recruit-card:hover .recruit-image-container img {
+    transform: scale(1.1);
+}
+
+.recruit-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    transition: all 0.3s ease;
+}
+
+.recruit-title {
+    color: #fff;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.recruit-content {
+    padding: 20px 10px;
+}
+
+.recruit-heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.recruit-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+.recruit-description {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.recruit-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.recruit-features li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 30px;
+    font-size: 1rem;
+    color: #444;
+}
+
+.recruit-features li i {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.btn-recruit {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), #333);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+}
+
+.btn-recruit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--secondary-color), #4A90E2);
+    z-index: -1;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.btn-recruit:hover {
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+.btn-recruit:hover::before {
+    opacity: 1;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .section-with-number::before {
+        font-size: 8rem;
+    }
+    
+    .recruit-card {
+        padding: 20px;
+    }
+    
+    .recruit-image-container {
+        height: 250px;
+    }
+    
+    .recruit-heading {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-with-number::before {
+        font-size: 6rem;
+    }
+    
+    .recruit-card {
+        padding: 15px;
+    }
+    
+    .recruit-image-container {
+        height: 200px;
+    }
+    
+    .recruit-title {
+        font-size: 1.3rem;
+    }
+    
+    .recruit-heading {
+        font-size: 1.4rem;
+    }
+    
+    .recruit-features li {
+        font-size: 0.9rem;
+    }
+}
+
+/* 社員インタビューへのリンク */
+.interview-link-section {
+  padding: 80px 0;
+  text-align: center;
+  background: url('/assets/images/interview-bg.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+.interview-link-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.interview-link-content {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+}
+
+.interview-link-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.interview-link-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 採用プロセス */
+.recruit-process {
+  padding: 80px 0;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 40px auto 0;
+  position: relative;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--light-blue);
+  z-index: -1;
+}
+
+.process-step {
+  flex: 1;
+  text-align: center;
+  padding: 0 15px;
+  position: relative;
+}
+
+.process-step-number {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--gradient-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.process-step h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.process-step p {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}

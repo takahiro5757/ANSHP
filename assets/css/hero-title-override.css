@@ -1,0 +1,23 @@
+/* ヒーロータイトルの青色の棒を完全に削除 */
+.hero-title::after,
+.hero-title.loaded::after,
+h1.hero-title::after,
+.hero-content .hero-title::after,
+.hero-content-wrapper .hero-title::after,
+#hero-title::after,
+.hero .hero-title::after {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  z-index: -9999 !important;
+  overflow: hidden !important;
+} 

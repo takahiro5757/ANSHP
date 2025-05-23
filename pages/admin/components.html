@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コンポーネント一覧 | ANSTEYPE</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/base/reset.css">
+    <link rel="stylesheet" href="/assets/css/base/variables.css">
+    <link rel="stylesheet" href="/assets/css/base/typography.css">
+    <link rel="stylesheet" href="/assets/css/components/sections.css">
+    <link rel="stylesheet" href="/assets/css/components/cards.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/header.css">
+    <link rel="stylesheet" href="/assets/css/components/footer.css">
+    <style>
+        .admin-sidebar {
+            position: sticky;
+            top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+        .admin-sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .admin-sidebar li {
+            margin-bottom: 10px;
+        }
+        .admin-sidebar a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .admin-sidebar a:hover {
+            color: var(--secondary-color);
+        }
+        .admin-sidebar .sub-menu {
+            padding-left: 15px;
+            margin-top: 5px;
+            display: none;
+        }
+        .admin-sidebar .sub-menu li {
+            margin-bottom: 5px;
+        }
+        .admin-sidebar .sub-menu a {
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+        .admin-sidebar li:hover > .sub-menu {
+            display: block;
+        }
+        .component-section {
+            padding: 60px 0;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+        }
+        .component-category {
+            padding-top: 60px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+        .component-title {
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .component-description {
+            margin-bottom: 30px;
+        }
+        .component-preview {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .code-block {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 40px;
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+        /* サンプル用のスタイル */
+        .demo-section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+        }
+        .demo-row {
+            margin-bottom: 30px;
+        }
+        .dark-bg {
+            background-color: #343a40;
+            padding: 30px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <!-- サイドバー -->
+            <div class="col-lg-3">
+                <div class="admin-sidebar">
+                    <h4>コンポーネント</h4>
+                    <ul>
+                        <li><a href="#cards-components">カードコンポーネント</a>
+                            <ul class="sub-menu">
+                                <li><a href="#gradient-text">グラデーションテキスト</a></li>
+                                <li><a href="#cards">基本カード</a></li>
+                                <li><a href="#business-cards">ビジネスカード</a></li>
+                                <li><a href="#concept-highlight">コンセプトハイライト</a></li>
+                                <li><a href="#join-us">JOIN USコンポーネント</a></li>
+                                <li><a href="#interview-cards">インタビューカード</a></li>
+                                <li><a href="#staff-cards">スタッフカード</a></li>
+                                <li><a href="#counters">カウンターアイテム</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#sections-components">セクションコンポーネント</a>
+                            <ul class="sub-menu">
+                                <li><a href="#sections">基本セクション</a></li>
+                                <li><a href="#section-with-number">番号付きセクション</a></li>
+                                <li><a href="#section-divider">セクション区切り</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#buttons-components">ボタンコンポーネント</a>
+                            <ul class="sub-menu">
+                                <li><a href="#btn-basic">基本ボタン</a></li>
+                                <li><a href="#btn-primary">プライマリボタン</a></li>
+                                <li><a href="#btn-outline">アウトラインボタン</a></li>
+                                <li><a href="#btn-animated">アニメーションボタン</a></li>
+                                <li><a href="#btn-animated-link">アニメーションリンク</a></li>
+                                <li><a href="#btn-contact">コンタクトボタン</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#header-components">ヘッダーコンポーネント</a>
+                            <ul class="sub-menu">
+                                <li><a href="#header-basic">基本ヘッダー</a></li>
+                                <li><a href="#header-nav">ナビゲーション</a></li>
+                                <li><a href="#header-mobile">モバイルメニュー</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#footer-components">フッターコンポーネント</a>
+                            <ul class="sub-menu">
+                                <li><a href="#footer-basic">基本フッター</a></li>
+                                <li><a href="#footer-links">フッターリンク</a></li>
+                                <li><a href="#footer-social">ソーシャルアイコン</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#page-hero-components">ページヒーローコンポーネント</a>
+                            <ul class="sub-menu">
+                                <li><a href="#page-hero-basic">基本ページヒーロー</a></li>
+                                <li><a href="#page-hero-bg">ページ背景</a></li>
+                                <li><a href="#typing-effect">タイピングエフェクト</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- メインコンテンツ -->
+            <div class="col-lg-9">
+                <h1 class="mb-4">ANSTEYPE コンポーネント一覧</h1>
+                <p class="mb-5">このページでは、ANSTEYPEウェブサイトで使用されている共通コンポーネントを確認できます。</p>
+                
+                <!-- グラデーションテキスト -->
+                <section id="gradient-text" class="component-section">
+                    <h2 class="component-title">グラデーションテキスト</h2>
+                    <div class="component-description">
+                        <p>サイト全体で統一されたグラデーションテキストスタイルを提供します。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="highlight-text">ハイライトテキスト</h3>
+                                <p>通常テキストと<span class="highlight-text">ハイライト</span>の組み合わせ</p>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="join-us-text">JOIN US</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.highlight-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: inline;
+  padding: 0 0.2rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.join-us-text {
+  display: inline-block;
+  background: var(--gradient-text-animated);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientText 3s ease infinite;
+  letter-spacing: 0.05em;
+  font-weight: 800;
+  font-size: 2.8rem;
+  position: relative;
+  z-index: 1;
+}</code></pre>
+                    </div>
+                </section>
+                
+                <!-- カード -->
+                <section id="cards" class="component-section">
+                    <h2 class="component-title">カード</h2>
+                    <div class="component-description">
+                        <p>様々なカードデザインを提供します。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card">
+                                    <img src="/assets/images/campaign-girls/240_F_1092990759_ojCTf22GLSVCyKE55WRHgAAMefQeReKZ.jpg" class="card-img-top" alt="Card image">
+                                    <div class="card-body">
+                                        <h5 class="card-title">基本カード</h5>
+                                        <p class="card-text">基本的なカードコンポーネントです。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card-effect">
+                                    <h3 class="card-title-modern">カードエフェクト</h3>
+                                    <p>ホバー時に特殊なエフェクトを持つカードです。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all var(--transition-medium) ease;
+  margin-bottom: 1.5rem;
+}
+
+.card-effect {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}</code></pre>
+                    </div>
+                </section>
+                
+                <!-- ビジネスカード -->
+                <section id="business-cards" class="component-section">
+                    <h2 class="component-title">ビジネスカード</h2>
+                    <div class="component-description">
+                        <p>ビジネスセクションで使用されるカードです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="business-card">
+                                    <div class="business-card-icon">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <div class="business-card-circle"></div>
+                                    <h3 class="business-card-title">パートナー<br>コンサルティング</h3>
+                                    <p>クライアント企業の課題に対して多角的な情報収集・分析。ニーズに合わせた最適な提案をします。</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="business-card">
+                                    <div class="business-card-icon">
+                                        <i class="fas fa-bullhorn"></i>
+                                    </div>
+                                    <div class="business-card-circle"></div>
+                                    <h3 class="business-card-title">セールス<br>プロモーション</h3>
+                                    <p>携帯ショップや家電量販店での販売促進活動。新商品の拡販イベントなどを実施します。</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="business-card">
+                                    <div class="business-card-icon">
+                                        <i class="fas fa-store"></i>
+                                    </div>
+                                    <div class="business-card-circle"></div>
+                                    <h3 class="business-card-title">販売代理店<br>事業</h3>
+                                    <p>通信事業における代理店契約に基づいた商材の提案。経験豊富な人材が対応します。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.business-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px 25px;
+  min-height: 280px;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+  padding-top: 30px;
+}
+
+.business-card-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.business-card-icon i {
+  font-size: 24px;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.business-card-circle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-blue-light);
+  border-radius: 50%;
+  z-index: 2;
+}</code></pre>
+                    </div>
+                </section>
+                
+                <!-- コンセプトハイライト -->
+                <section id="concept-highlight" class="component-section">
+                    <h2 class="component-title">コンセプトハイライト</h2>
+                    <div class="component-description">
+                        <p>コンセプトセクションで使用されるハイライトカードです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row">
+                            <div class="col-12 mb-4">
+                                <p class="concept-highlight">
+                                    <i class="fas fa-trophy concept-icon"></i> 誰かが<strong class="highlight-text">成功した</strong>ときに、僕らは<strong class="highlight-text">「喜びを分かち合おう」</strong>
+                                </p>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <p class="concept-highlight">
+                                    <i class="fas fa-hands-helping concept-icon"></i> 誰かが<strong class="highlight-text">躓いた</strong>そのときに、僕らは<strong class="highlight-text">「手を差し伸べよう」</strong>
+                                </p>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <p class="concept-highlight">
+                                    <i class="fas fa-heart concept-icon"></i> 誰かが<strong class="highlight-text">助けてくれた</strong>ときに僕らは<strong class="highlight-text">「感謝を口にしよう」</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.concept-highlight {
+  position: relative;
+  display: block;
+  padding: 1.2rem 1.8rem 1.2rem 3.5rem;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.concept-icon {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}</code></pre>
+                    </div>
+                </section>
+                
+                <!-- JOIN USコンポーネント -->
+                <section id="join-us" class="component-section">
+                    <h2 class="component-title">JOIN USコンポーネント</h2>
+                    <div class="component-description">
+                        <p>採用情報セクションで使用されるコンポーネントです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row align-items-stretch">
+                            <div class="col-md-6 mb-4">
+                                <div class="card-effect">
+                                    <h3 class="card-title-modern">ANSTEYPEの強み</h3>
+                                    <div class="join-card-content">
+                                        <div class="counter-item">
+                                            <div class="counter-up">300</div>
+                                            <div class="counter-label">人以上の仲間が<br>活躍中</div>
+                                        </div>
+                                        <div class="counter-item">
+                                            <div class="counter-up">98</div>
+                                            <div class="counter-label">%の社員満足度</div>
+                                        </div>
+                                        <div class="counter-item">
+                                            <div class="counter-up">25</div>
+                                            <div class="counter-label">歳の平均年齢</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card-effect text-center d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h3 class="card-title-modern">ANSTEYPEで働く</h3>
+                                        <p class="join-card-message">私たちは常に<span class="join-emphasis">新しい仲間</span>を募集しています。<br>多様な個性を持つ仲間と一緒に、<span class="join-emphasis">新しい未来</span>を創りませんか？</p>
+                                    </div>
+                                    <div class="mt-4">
+                                        <span class="join-us-text">JOIN US</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.join-us-text {
+  display: inline-block;
+  background: var(--gradient-text-animated);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientText 3s ease infinite;
+  letter-spacing: 0.05em;
+  font-weight: 800;
+  font-size: 2.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.join-emphasis {
+  font-weight: 600;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}</code></pre>
+                    </div>
+                </section>
+                
+                <!-- インタビューカード -->
+                <section id="interview-cards" class="component-section">
+                    <h2 class="component-title">インタビューカード</h2>
+                    <div class="component-description">
+                        <p>インタビューセクションで使用されるカードです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="campaign-card">
+                                    <div class="campaign-card-img-container">
+                                        <img src="/assets/images/campaign-girls/1000_F_1040969700_zi5YgjcK69J3GNVdlXDzGBOpwUKVZDqh.jpg" alt="インタビュー">
+                                        <span class="campaign-card-badge">2023年</span>
+                                    </div>
+                                    <div class="campaign-card-body">
+                                        <div class="campaign-card-text">
+                                            「自分らしさを大切にする社風が魅力です。意見を尊重してもらえる環境で、やりがいを感じながら日々の業務に取り組んでいます。」
+                                        </div>
+                                        <div class="campaign-card-info">
+                                            オフィスサポート事業部 | 田中 美咲
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="campaign-card">
+                                    <div class="campaign-card-img-container">
+                                        <img src="/assets/images/campaign-girls/240_F_1092990759_ojCTf22GLSVCyKE55WRHgAAMefQeReKZ.jpg" alt="インタビュー">
+                                        <span class="campaign-card-badge">2023年</span>
+                                    </div>
+                                    <div class="campaign-card-body">
+                                        <div class="campaign-card-text">
+                                            「多様なバックグラウンドを持つメンバーと協力することで、新しい視点やアイデアが生まれます。この環境が私の成長を加速させています。」
+                                        </div>
+                                        <div class="campaign-card-info">
+                                            販売促進部 | 佐藤 彩香
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="campaign-card">
+                                    <div class="campaign-card-img-container">
+                                        <img src="/assets/images/campaign-girls/240_F_504079958_B4NAPSptazWloDgeJCYAoHmVWGlRAsGi.jpg" alt="インタビュー">
+                                        <span class="campaign-card-badge">2023年</span>
+                                    </div>
+                                    <div class="campaign-card-body">
+                                        <div class="campaign-card-text">
+                                            「25歳で責任者に抜擢されました。年齢に関係なく実力や意欲を評価してもらえる環境が、ANSTEYPEの強みだと感じています。」
+                                        </div>
+                                        <div class="campaign-card-info">
+                                            マーケティング部 | 山田 直子
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.campaign-card {
+  position: relative;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin: 0 10px;
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+}
+
+.campaign-card-img-container {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.campaign-card-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--primary-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  z-index: 2;
+}</code></pre>
+                    </div>
+                </section>
+                
+                <!-- スタッフカード -->
+                <section id="staff-cards" class="component-section">
+                    <h2 class="component-title">スタッフカード</h2>
+                    <div class="component-description">
+                        <p>社員紹介用のカードコンポーネントです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="staff-card">
+                                    <div class="staff-card-inner">
+                                        <div class="light-effect"></div>
+                                        <div class="decorative-dots"></div>
+                                        <div class="decorative-line"></div>
+                                        <div class="staff-image-container">
+                                            <div class="staff-image-border">
+                                                <img src="/assets/images/campaign-girls/1000_F_1040969700_zi5YgjcK69J3GNVdlXDzGBOpwUKVZDqh.jpg" alt="田中 健太" class="staff-image">
+                                            </div>
+                                        </div>
+                                        <div class="staff-content">
+                                            <h4 class="staff-name">田中 健太 <span class="staff-age">28歳</span></h4>
+                                            <div class="staff-position">
+                                                <span class="department">営業部</span>
+                                                <span class="position-dot"></span>
+                                                <span class="year">入社3年目</span>
+                                            </div>
+                                            <div class="staff-quote">
+                                                <i class="fas fa-quote-left quote-icon"></i>
+                                                <p class="staff-text">前職はまったく異なる業界でしたが、充実した研修のおかげで安心してスタートできました。仲間と切磋琢磨しながら成長できる環境で、毎日やりがいを感じています。</p>
+                                            </div>
+                                            <div class="staff-action">
+                                                <span class="staff-more">詳しく見る <i class="fas fa-long-arrow-alt-right"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.staff-card {
+  position: relative;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.staff-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 40px rgba(74, 144, 226, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(74, 144, 226, 0.3);
+}
+
+.staff-card-inner {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.staff-image-container {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 25px;
+  position: relative;
+}
+
+.staff-image-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 2px solid rgba(74, 144, 226, 0.3);
+  transition: all 0.4s ease;
+}
+
+.staff-card:hover .staff-image-border {
+  border-radius: 50%;
+  border-color: #4a90e2;
+  transform: scale(1.05);
+}
+
+.staff-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.staff-card:hover .staff-image {
+  border-radius: 50%;
+  transform: scale(0.95);
+}</code></pre>
+                    </div>
+                </section>
+                
+                <!-- セクションコンポーネント -->
+                <h2 id="sections-components" class="component-category">セクションコンポーネント</h2>
+
+                <!-- 基本セクション -->
+                <section id="sections" class="component-section">
+                    <h2 class="component-title">基本セクション</h2>
+                    <div class="component-description">
+                        <p>ページ全体のセクション構造を定義します。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="demo-section">
+                            <div class="section-title-wrapper">
+                                <h2 class="section-title concept-section-title">SECTION TITLE</h2>
+                                <p class="section-subtitle">
+                                    <span class="refined-concept">セクションのサブタイトルが入ります。<br>
+                                    詳細な説明文などを追加します。</span>
+                                </p>
+                            </div>
+                            
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10">
+                                    <p>セクション内のコンテンツが入ります。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.section {
+  padding: 60px 0;
+  position: relative;
+}
+
+.section-title, 
+.concept-section-title {
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.2rem;
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- 番号付きセクション -->
+                <section id="section-with-number" class="component-section">
+                    <h2 class="component-title">番号付きセクション</h2>
+                    <div class="component-description">
+                        <p>番号付きの特別なセクションスタイルです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="section-with-number">
+                            <div class="section-number">01</div>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10">
+                                        <h3 class="numbered-section-title">番号付きセクション</h3>
+                                        <p>番号付きセクションのコンテンツが入ります。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.section-with-number {
+  position: relative;
+  padding: 60px 0;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  margin: 50px 0;
+  border-radius: 10px;
+}
+
+.section-number {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5rem;
+  font-weight: 900;
+  opacity: 0.1;
+  color: var(--primary-color);
+  z-index: 0;
+}
+
+.numbered-section-title {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- セクション区切り -->
+                <section id="section-divider" class="component-section">
+                    <h2 class="component-title">セクション区切り</h2>
+                    <div class="component-description">
+                        <p>セクション間の区切り線や装飾要素です。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="section-divider"></div>
+                        <div class="mt-4 mb-4">
+                            <div class="section-divider-wave"></div>
+                        </div>
+                        <div class="section-divider-gradient"></div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+  margin: 50px 0;
+}
+
+.section-divider-wave {
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+}
+
+.section-divider-wave::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background: url('../../images/wave-divider.svg') repeat-x;
+  background-size: contain;
+}
+
+.section-divider-gradient {
+  height: 5px;
+  background: var(--gradient-blue);
+  margin: 50px 0;
+  border-radius: 5px;
+}</code></pre>
+                    </div>
+                </section>
+                
+                <!-- カウンターアイテム -->
+                <section id="counters" class="component-section">
+                    <h2 class="component-title">カウンターアイテム</h2>
+                    <div class="component-description">
+                        <p>JOIN USセクションで使用される数値カウンターです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="counter-item">
+                                    <div class="counter-up">300</div>
+                                    <div class="counter-label">人以上の仲間が<br>活躍中</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="counter-item">
+                                    <div class="counter-up">98</div>
+                                    <div class="counter-label">%の社員満足度</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="counter-item">
+                                    <div class="counter-up">25</div>
+                                    <div class="counter-label">歳の平均年齢</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.counter-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.counter-up {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-right: 0.5rem;
+  line-height: 1;
+}
+
+.counter-label {
+  font-size: 1.1rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}</code></pre>
+                    </div>
+                </section>
+                
+                <!-- ボタンコンポーネント -->
+                <h2 id="buttons-components" class="component-category">ボタンコンポーネント</h2>
+
+                <!-- 基本ボタン -->
+                <section id="btn-basic" class="component-section">
+                    <h2 class="component-title">基本ボタン</h2>
+                    <div class="component-description">
+                        <p>基本的なボタンスタイルを提供します。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn">ボタン</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.btn {
+  display: inline-block;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.675rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 50px;
+  transition: all var(--transition-fast) ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- プライマリボタン -->
+                <section id="btn-primary" class="component-section">
+                    <h2 class="component-title">プライマリボタン</h2>
+                    <div class="component-description">
+                        <p>メインの操作に使用するプライマリボタンです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-primary">プライマリボタン</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.btn-primary {
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- アウトラインボタン -->
+                <section id="btn-outline" class="component-section">
+                    <h2 class="component-title">アウトラインボタン</h2>
+                    <div class="component-description">
+                        <p>背景色のないアウトラインスタイルのボタンです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="dark-bg">
+                                    <button class="btn btn-outline-light">アウトラインボタン</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.btn-outline-light {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.btn-outline-light:hover {
+  color: var(--primary-color);
+  background-color: var(--white);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- アニメーションボタン -->
+                <section id="btn-animated" class="component-section">
+                    <h2 class="component-title">アニメーションボタン</h2>
+                    <div class="component-description">
+                        <p>ホバー時に特殊なアニメーション効果を持つボタンです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn-animated btn-primary">アニメーションボタン</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.btn-animated {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-fast) ease;
+  z-index: 1;
+}
+
+.btn-animated::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+
+.btn-animated:hover::before {
+  left: 100%;
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- アニメーションリンク -->
+                <section id="btn-animated-link" class="component-section">
+                    <h2 class="component-title">アニメーションリンク</h2>
+                    <div class="component-description">
+                        <p>アイコン付きのアニメーションリンクボタンです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="#" class="btn-animated-link">詳細を見る <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.btn-animated-link {
+  position: relative;
+  overflow: hidden;
+  padding: 14px 32px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--primary-color), #333);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  font-size: 1.05rem;
+  transition: all 0.4s ease;
+  z-index: 1;
+  border: none;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-animated-link i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-animated-link:hover i {
+  transform: translateX(5px);
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- コンタクトボタン -->
+                <section id="btn-contact" class="component-section">
+                    <h2 class="component-title">コンタクトボタン</h2>
+                    <div class="component-description">
+                        <p>問い合わせページへのリンクボタンです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="#" class="btn-contact">お問い合わせ</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.btn-contact {
+  display: inline-block;
+  background: var(--gradient-blue);
+  color: var(--white);
+  border-radius: 50px;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all var(--transition-medium) ease;
+  border: none;
+  letter-spacing: 0.1em;
+  text-align: center;
+}</code></pre>
+                    </div>
+                </section>
+                
+                <!-- ヘッダーコンポーネント -->
+                <h2 id="header-components" class="component-category">ヘッダーコンポーネント</h2>
+
+                <!-- 基本ヘッダー -->
+                <section id="header-basic" class="component-section">
+                    <h2 class="component-title">基本ヘッダー</h2>
+                    <div class="component-description">
+                        <p>ウェブサイトの基本ヘッダー構造です。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="dark-bg">
+                            <div class="header" style="position: relative;">
+                                <div class="container">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="/" class="navbar-brand">
+                                            <img src="/assets/images/logo-white.png" alt="ANSTEYPE" class="logo" style="filter: brightness(0) invert(1);">
+                                        </a>
+                                        <div class="d-flex align-items-center">
+                                            <div class="navbar-nav">
+                                                <a class="nav-link" href="#">ホーム</a>
+                                                <a class="nav-link" href="#">会社概要</a>
+                                                <a class="nav-link" href="#">サービス</a>
+                                                <a class="nav-link" href="#">お問い合わせ</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 1000;
+  transition: all var(--transition-fast) ease;
+  background: none;
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 10px 0;
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- ナビゲーション -->
+                <section id="header-nav" class="component-section">
+                    <h2 class="component-title">ナビゲーション</h2>
+                    <div class="component-description">
+                        <p>ヘッダーナビゲーションリンクのスタイルです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="dark-bg">
+                            <div class="navbar-nav d-flex flex-row">
+                                <a class="nav-link" href="#">ホーム</a>
+                                <a class="nav-link active" href="#">会社概要</a>
+                                <a class="nav-link" href="#">サービス</a>
+                                <a class="nav-link" href="#">お問い合わせ</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.navbar-nav .nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  font-weight: 500;
+  transition: all var(--transition-fast) ease;
+  color: var(--white);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--secondary-color);
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--secondary-color);
+  transform: translateX(-50%);
+  transition: width var(--transition-fast) ease;
+}
+
+.navbar-nav .nav-link:hover::after, 
+.navbar-nav .nav-link.active::after {
+  width: 80%;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--secondary-color);
+  font-weight: 600;
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- モバイルメニュー -->
+                <section id="header-mobile" class="component-section">
+                    <h2 class="component-title">モバイルメニュー</h2>
+                    <div class="component-description">
+                        <p>モバイル用のハンバーガーメニューボタンです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="dark-bg">
+                            <button class="menu-button">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            
+                            <div class="mt-4">
+                                <button class="menu-button open">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.menu-button {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  margin-left: 20px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: var(--white);
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: all var(--transition-fast) ease;
+}
+
+.menu-button span:nth-child(1) {
+  top: 0;
+}
+
+.menu-button span:nth-child(2) {
+  top: 10px;
+}
+
+.menu-button span:nth-child(3) {
+  top: 20px;
+}
+
+.menu-button.open span:nth-child(1) {
+  top: 10px;
+  transform: rotate(135deg);
+}
+
+.menu-button.open span:nth-child(2) {
+  opacity: 0;
+  left: -30px;
+}
+
+.menu-button.open span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-135deg);
+}</code></pre>
+                    </div>
+                </section>
+                
+                <!-- フッターコンポーネント -->
+                <h2 id="footer-components" class="component-category">フッターコンポーネント</h2>
+
+                <!-- 基本フッター -->
+                <section id="footer-basic" class="component-section">
+                    <h2 class="component-title">基本フッター</h2>
+                    <div class="component-description">
+                        <p>ウェブサイトの基本フッター構造です。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="footer" style="padding: 30px; background-color: #000000 !important;">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h3>ANSTEYPE</h3>
+                                        <p>ANSTEYPEは、人と企業の架け橋となり、新たな価値を創造する会社です。</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h3>リンク</h3>
+                                        <ul class="footer-links">
+                                            <li><a href="#">ホーム</a></li>
+                                            <li><a href="#">会社概要</a></li>
+                                            <li><a href="#">サービス</a></li>
+                                            <li><a href="#">採用情報</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h3>お問い合わせ</h3>
+                                        <p>〒123-4567<br>東京都渋谷区○○1-2-3<br>info@ansteype.co.jp</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.footer {
+  background-color: #000000 !important;
+  padding: 60px 0 30px;
+  color: #ffffff;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--gradient-blue);
+  opacity: 0.7;
+}
+
+.footer h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.footer p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #ffffff;
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- フッターリンク -->
+                <section id="footer-links" class="component-section">
+                    <h2 class="component-title">フッターリンク</h2>
+                    <div class="component-description">
+                        <p>フッターのナビゲーションリンクです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div style="background-color: #000000; padding: 30px;">
+                            <ul class="footer-links">
+                                <li><a href="#">ホーム</a></li>
+                                <li><a href="#">会社概要</a></li>
+                                <li><a href="#">サービス</a></li>
+                                <li><a href="#">採用情報</a></li>
+                                <li><a href="#">お問い合わせ</a></li>
+                                <li><a href="#">プライバシーポリシー</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.footer-links {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+  width: 50%;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color var(--transition-fast) ease;
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.footer-links a:hover {
+  color: var(--secondary-color);
+  padding-left: 0.8rem;
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- ソーシャルアイコン -->
+                <section id="footer-social" class="component-section">
+                    <h2 class="component-title">ソーシャルアイコン</h2>
+                    <div class="component-description">
+                        <p>フッターのソーシャルメディアアイコンです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div style="background-color: #000000; padding: 30px;">
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.social-icons {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  margin-right: 0.8rem;
+  transition: all var(--transition-fast) ease;
+}
+
+.social-icons a:hover {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  transform: translateY(-3px);
+}</code></pre>
+                    </div>
+                </section>
+                
+                <!-- ページヒーローコンポーネント -->
+                <h2 id="page-hero-components" class="component-category">ページヒーローコンポーネント</h2>
+
+                <!-- 基本ページヒーロー -->
+                <section id="page-hero-basic" class="component-section">
+                    <h2 class="component-title">基本ページヒーロー</h2>
+                    <div class="component-description">
+                        <p>各ページのトップに表示するヒーローセクションです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="page-title" style="height: 300px !important; background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 144, 226, 0.6)), url('/assets/images/hero/assets_task_01jv471sbnewdb6btek38bfyh9_1747119645_img_1.webp');">
+                            <div class="container">
+                                <h1>ページタイトル</h1>
+                                <p class="lead">ページの説明文がここに入ります。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.page-title {
+  padding: 60px 0 30px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  color: white !important;
+  text-align: center !important;
+  margin-bottom: 0 !important;
+  position: relative !important;
+  height: 500px !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: hidden !important;
+}
+
+.page-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../images/bg-dots.webp') repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.page-title .container {
+  position: relative !important;
+  z-index: 2 !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- ページ背景 -->
+                <section id="page-hero-bg" class="component-section">
+                    <h2 class="component-title">ページ背景</h2>
+                    <div class="component-description">
+                        <p>各ページヒーローの背景スタイルです。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="page-title about-bg" style="height: 200px !important;">
+                                    <div class="container">
+                                        <h3>会社概要</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="page-title recruit-bg" style="height: 200px !important;">
+                                    <div class="container">
+                                        <h3>採用情報</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="page-title interview-bg" style="height: 200px !important;">
+                                    <div class="container">
+                                        <h3>インタビュー</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="page-title contact-bg" style="height: 200px !important;">
+                                    <div class="container">
+                                        <h3>お問い合わせ</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.page-title.about-bg {
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 144, 226, 0.6)), url('../../images/hero/assets_task_01jv471sbnewdb6btek38bfyh9_1747119645_img_1.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.page-title.recruit-bg {
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 144, 226, 0.6)), url('../../images/hero/assets_task_01jv4b6d7sfr0tm8zqt4scpme6_1747124002_img_1.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.page-title.interview-bg {
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 123, 209, 0.6)), url('../../images/hero/assets_task_01jv4bd50yfcy947v2qc1a656d_1747124222_img_3.webp');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.page-title.contact-bg {
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 144, 226, 0.6)), url('../../images/hero/assets_task_01jv471sbnewdb6btek38bfyh9_1747119645_img_1.webp');
+  background-size: cover;
+  background-position: center;
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- タイピングエフェクト -->
+                <section id="typing-effect" class="component-section">
+                    <h2 class="component-title">タイピングエフェクト</h2>
+                    <div class="component-description">
+                        <p>テキストをタイピングするようなアニメーション効果です。</p>
+                    </div>
+                    
+                    <div class="component-preview">
+                        <div class="dark-bg">
+                            <h3><span class="typing-effect">タイピングエフェクト</span></h3>
+                            <h3 class="mt-4"><span class="typing-effect typing-complete">完了状態</span></h3>
+                        </div>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>.typing-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.typing-effect::after {
+  content: '|';
+  position: absolute;
+  right: -10px;
+  animation: blink 0.7s infinite;
+}
+
+.typing-complete::after {
+  display: none;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}</code></pre>
+                    </div>
+                </section>
+                
+                <!-- 管理者向けリンク -->
+                <div class="mt-5">
+                    <a href="/pages/admin/component-editor.php" class="btn btn-primary me-2">
+                        <i class="fas fa-edit"></i> コンポーネント編集
+                    </a>
+                    <a href="/pages/admin/index.html" class="btn btn-secondary me-2">
+                        <i class="fas fa-cog"></i> 管理ページへ戻る
+                    </a>
+                    <a href="/" class="btn btn-outline-secondary">
+                        <i class="fas fa-home"></i> トップページに戻る
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // AOS初期化
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true
+        });
+        
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
