@@ -1,0 +1,740 @@
+/**
+ * インタビューページスタイル
+ * INTERVIEW専用のスタイル
+ */
+
+/* インタビューページ用スタイル */
+
+/* メインのインタビューページ用ナビゲーションスタイル */
+.interview-page .navbar-nav .nav-link,
+.interview-page .navbar-brand {
+  color: white !important;
+}
+
+.interview-page.scrolled .navbar-nav .nav-link,
+.interview-page.scrolled .navbar-brand {
+  color: var(--primary-color) !important;
+}
+
+.interview-page.scrolled .navbar-nav .nav-link:hover,
+.interview-page.scrolled .navbar-nav .nav-link.active {
+  color: var(--secondary-color) !important;
+}
+
+/* ロゴの色修正 */
+body:has(.page-title) .logo {
+  filter: brightness(0) invert(1) !important; /* 白色に変換 */
+}
+
+body:has(.page-title) .header.scrolled .logo {
+  filter: none !important; /* 元の色に戻す */
+}
+
+/* メニューボタンの色修正 */
+body:has(.page-title) .menu-button span {
+  background: white !important;
+}
+
+body:has(.page-title) .header.scrolled .menu-button span {
+  background: var(--primary-color) !important;
+}
+
+/* インタビューページのヒーロー背景とサイズ設定 */
+.page-title {
+  height: 500px !important;
+  min-height: unset !important;
+  max-height: 500px !important;
+}
+
+/* インタビューページのヒーロー背景 - 更新: 2024-01-23 */
+.page-title.interview-bg {
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 123, 209, 0.6)), url('../../images/hero/interviews_HERO.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  opacity: 1 !important;
+  z-index: 1 !important;
+  visibility: visible !important;
+}
+
+/* パララックス効果 */
+.interview-bg {
+  transform: none !important;
+  transition: transform 0.5s ease-out;
+}
+
+/* タイピングエフェクト */
+.typing-effect {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid transparent;
+}
+
+.typing-effect.typing-complete {
+  border-right-color: transparent;
+}
+
+/* ティルト効果のための基本スタイル */
+.js-tilt {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+/* スクロールインジケーター */
+.scroll-indicator {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: scrollFadeInUp 1.5s infinite;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.scroll-indicator i {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.scroll-indicator span {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ページタイトルのテキスト配置を中央に指定 - page-hero.cssで定義されているため削除 */
+
+/* body要素の横幅制限を解除 */
+body {
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+/* セクションスタイルの改善 */
+.section {
+  padding: 60px 0; /* 適切なサイズに修正 */
+  position: relative;
+  overflow: hidden;
+}
+
+/* 横幅調整 - セクションの最大幅を制限 */
+.section .container {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #000000, #4A7BD1); /* 統一グラデーション */
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+@keyframes scrollFadeInUp {
+  0% {
+    transform: translate(-50%, 10px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 0.6;
+  }
+}
+
+/* インタビュー一覧 */
+.interview-list-section {
+  padding: 80px 0;
+}
+
+.interview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* インタビューカードの改善 */
+.interview-image {
+  width: 100%;
+  height: 280px; /* 少し小さく */
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px 12px 0 0; /* 角を丸く */
+}
+
+.interview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.4s ease;
+}
+
+.interview-card:hover .interview-image img {
+  transform: scale(1.05);
+}
+
+.interview-content {
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 0 0 12px 12px; /* 角を丸く */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* 影を柔らかく */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.interview-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #000000; /* 黒に統一 */
+}
+
+.interview-position {
+  font-size: 0.95rem;
+  color: #4A7BD1; /* 統一青色 */
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.interview-year {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.interview-excerpt {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.interview-card {
+  background-color: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0,0,0,0.03); /* 薄いボーダー */
+  transform: translateY(40px);
+  opacity: 0;
+  animation: fadeUp 0.8s forwards;
+  animation-delay: calc(var(--delay, 0) * 0.15s);
+  height: 100%;
+}
+
+/* data-delay属性を使用したアニメーション遅延 */
+.interview-card[data-delay="1"] {
+  --delay: 1;
+}
+
+.interview-card[data-delay="2"] {
+  --delay: 2;
+}
+
+.interview-card[data-delay="3"] {
+  --delay: 3;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.interview-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 詳細を見るボタンのスタイル */
+.btn-interview {
+  display: inline-block;
+  background: #000000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+  margin-top: auto;
+}
+
+.btn-interview::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #4A7BD1; /* 統一青色 */
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.btn-interview:hover {
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.btn-interview:hover::before {
+  opacity: 1;
+}
+
+/* メッセージセクションの改善 */
+.message-section {
+  background: linear-gradient(135deg, #f8f9ff, #f1f7ff);
+  position: relative;
+  overflow: hidden;
+}
+
+.message-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(74, 123, 209, 0.08) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+}
+
+.message-section::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(74, 123, 209, 0.05) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+}
+
+.message-container {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s ease;
+  border-left: 4px solid #4A7BD1; /* 統一青色 */
+}
+
+.message-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.message-content p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.message-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* フェードインアニメーションの統一 */
+[data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ナビゲーションメニューの統一スタイル */
+.navbar-nav .nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: var(--primary-color);
+}
+
+.navbar-nav .nav-link:hover {
+  color: #4A7BD1;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #4A7BD1;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after, 
+.navbar-nav .nav-link.active::after {
+  width: 80%;
+}
+
+.navbar-nav .nav-link.active {
+  color: #4A7BD1;
+  font-weight: 600;
+}
+
+/* スクロール時のヘッダースタイル */
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 10px 0;
+}
+
+.header.scrolled .navbar-brand img {
+  max-height: 40px;
+}
+
+/* メニューボタンのアニメーション */
+.menu-button {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  margin-left: 20px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #000;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.menu-button span:nth-child(1) {
+  top: 0;
+}
+
+.menu-button span:nth-child(2) {
+  top: 10px;
+}
+
+.menu-button span:nth-child(3) {
+  top: 20px;
+}
+
+.menu-button.open span:nth-child(1) {
+  top: 10px;
+  transform: rotate(135deg);
+}
+
+.menu-button.open span:nth-child(2) {
+  opacity: 0;
+  left: -30px;
+}
+
+.menu-button.open span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-135deg);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 992px) {
+  .page-title {
+    height: 450px !important;
+    min-height: unset !important;
+    max-height: 450px !important;
+  }
+  
+  .interview-item {
+    max-width: 48%;
+    margin-bottom: 30px;
+  }
+  
+  .interview-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-title {
+    height: 400px !important;
+    min-height: unset !important;
+    max-height: 400px !important;
+  }
+
+  .interview-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .interview-item {
+    max-width: 100%;
+  }
+  
+  .interview-title {
+    font-size: 1.6rem;
+  }
+  
+  .interview-content h3 {
+    font-size: 1.4rem;
+  }
+  
+  .interview-item:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+  
+  .interview-item:hover .interview-image img {
+    transform: scale(1.05);
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  
+  .clip-path-reveal {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@media (max-width: 576px) {
+  .page-title {
+    height: 350px !important;
+    min-height: unset !important;
+    max-height: 350px !important;
+  }
+
+  .interview-header {
+    padding: 90px 0 40px;
+  }
+  
+  .interview-title {
+    font-size: 1.5rem;
+  }
+  
+  .interview-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .interview-section {
+    padding: 40px 0;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  .interview-content {
+    padding: 15px;
+  }
+  
+  .interview-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .interview-content p {
+    font-size: 0.9rem;
+  }
+  
+  .interview-meta {
+    font-size: 0.8rem;
+  }
+  
+  .glassmorphism-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+/* 個別インタビュー */
+.interview-detail-section {
+  padding: 40px 0 80px;
+}
+
+.interview-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.interview-profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.interview-profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.interview-profile-info h2 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.interview-profile-position {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.interview-profile-meta {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.interview-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.interview-question {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.interview-question::before {
+  content: 'Q';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.interview-answer {
+  margin-bottom: 30px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.interview-answer::before {
+  content: 'A';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.interview-image {
+  margin: 30px 0;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.interview-image img {
+  width: 100%;
+}
+
+.interview-quote {
+  background-color: var(--light-blue);
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-style: italic;
+  position: relative;
+  margin: 30px 0;
+}
+
+.interview-quote::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 4rem;
+  color: rgba(74, 123, 209, 0.2);
+  line-height: 1;
+}
+
+/* インタビューリスト */
+.interview-list {
+  padding: 2rem 0 5rem;
+}
+

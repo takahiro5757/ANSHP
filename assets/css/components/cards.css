@@ -1,0 +1,678 @@
+/**
+ * カードスタイル
+ * 各種カード要素のスタイル
+ */
+
+/* 基本カードスタイル */
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all var(--transition-medium) ease;
+  margin-bottom: 1.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* カード内部スタイル */
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.card-text {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+/* 3Dカードエフェクト */
+.card-3d {
+  perspective: 1000px;
+  margin-bottom: 15px;
+}
+
+.card-3d-inner {
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.card-3d-inner h3 {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.card-3d:hover .card-3d-inner {
+  transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* コンセプトハイライトとアイコン */
+.concept-highlight {
+  position: relative;
+  display: block;
+  padding: 1.2rem 1.8rem 1.2rem 3.5rem;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.concept-icon {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.concept-highlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: inline;
+  padding: 0 0.2rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* JOIN USカードエフェクト */
+.card-effect {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.2rem;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--gradient-text);
+  transition: all 0.3s ease;
+}
+
+.card-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-effect:hover::before {
+  height: 7px;
+}
+
+/* JOIN USセクション専用カードスタイル */
+#join-us .card-effect {
+  background: #ffffff;
+  background-color: #ffffff !important;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  transition: all 0.3s ease;
+  padding: 1.2rem;
+}
+
+#join-us .card-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* カードタイトルモダン */
+.card-title-modern {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  position: relative;
+  text-align: center;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  color: var(--primary-color);
+}
+
+.card-title-modern::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: var(--gradient-text);
+  border-radius: 1.5px;
+}
+
+/* カンパニーカード */
+.campaign-card {
+  position: relative;
+  transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.03);
+  margin: 0 20px;
+  background: #ffffff;
+  border: none;
+  transform: translateY(0);
+  backdrop-filter: blur(5px);
+}
+
+.campaign-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.campaign-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.campaign-card:hover::before {
+  opacity: 0.8;
+}
+
+.campaign-card-img-container {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.campaign-card-img-container img {
+  transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) saturate(1.1);
+}
+
+.campaign-card:hover .campaign-card-img-container img {
+  transform: scale(1.08);
+  filter: brightness(1.1) saturate(1.2);
+}
+
+.campaign-card-badge {
+  display: none;
+}
+
+.campaign-card-body {
+  padding: 2rem;
+  background: var(--white);
+  position: relative;
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.campaign-card:hover .campaign-card-body {
+  transform: translateY(-8px);
+}
+
+.campaign-card-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.campaign-card-text::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--secondary-color);
+  opacity: 0.6;
+}
+
+.campaign-card-info {
+  font-size: 0.95rem;
+  color: #4A90E2;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  position: relative;
+  padding-left: 0;
+  transition: transform 0.8s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 1rem;
+}
+
+/* フォールバック対応 */
+@supports not (-webkit-background-clip: text) {
+  .campaign-card-info {
+    color: #4A90E2 !important;
+    -webkit-text-fill-color: #4A90E2 !important;
+  }
+}
+
+.campaign-card:hover .campaign-card-info {
+  transform: translateX(0);
+}
+
+.campaign-card-info::before {
+  display: none;
+}
+
+#interview .campaign-card {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+  border: none;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06), 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.campaign-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--gradient-text);
+  transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 3;
+}
+
+.campaign-card:hover::after {
+  width: 100%;
+}
+
+/* ビジネスカードのアイコンスタイル */
+.business-card-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.business-card-icon i {
+  font-size: 24px;
+  color: #4A90E2;
+  background: url('/assets/images/backgrounds/blue-gradient.webp') center/200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-position: center;
+}
+
+/* フォールバック対応 */
+@supports not (-webkit-background-clip: text) {
+  .business-card-icon i {
+    color: #4A90E2 !important;
+    -webkit-text-fill-color: #4A90E2 !important;
+  }
+}
+
+.business-card-circle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 60px;
+  height: 60px;
+  background: url('/assets/images/backgrounds/blue-gradient.webp') center/200% 200%;
+  background-position: center;
+  opacity: 0.4;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* ビジネスカード */
+.business-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px 25px;
+  min-height: 280px;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+  padding-top: 30px;
+}
+
+.business-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.business-card-title {
+  animation: none !important;
+  background-position: center !important;
+  background: url('/assets/images/backgrounds/blue-gradient.webp');
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.business-card p {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* JOIN USテキストはcomponents/text-effects.cssで定義済み */
+
+.join-card-content {
+  margin-bottom: 1rem;
+}
+
+.join-card-message {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+@keyframes gradientText {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* カウンター関連はcomponents/counters.cssで定義済み */
+
+/* スタッフカード（社員紹介カード）*/
+.staff-card {
+  position: relative;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.staff-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 40px rgba(74, 144, 226, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(74, 144, 226, 0.3);
+}
+
+.staff-card-inner {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* プロフィール画像 */
+.staff-image-container {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 25px;
+  position: relative;
+}
+
+.staff-image-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 2px solid rgba(74, 144, 226, 0.3);
+  transition: all 0.4s ease;
+}
+
+.staff-card:hover .staff-image-border {
+  border-radius: 50%;
+  border-color: #4a90e2;
+  transform: scale(1.05);
+}
+
+.staff-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.staff-card:hover .staff-image {
+  border-radius: 50%;
+  transform: scale(0.95);
+}
+
+/* スタッフ情報 */
+.staff-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+  transition: all 0.4s ease;
+}
+
+.staff-card:hover .staff-name {
+  color: #4a90e2;
+}
+
+.staff-age {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-left: 5px;
+}
+
+.staff-position {
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: rgba(74, 144, 226, 0.1);
+  border-radius: 30px;
+  font-size: 0.9rem;
+  color: #4a7bd1;
+  margin-bottom: 20px;
+  transition: all 0.4s ease;
+}
+
+.staff-card:hover .staff-position {
+  background-color: rgba(74, 144, 226, 0.2);
+}
+
+.position-dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: rgba(74, 144, 226, 0.5);
+  border-radius: 50%;
+  margin: 0 8px;
+  vertical-align: middle;
+}
+
+/* 引用テキスト */
+.staff-quote {
+  position: relative;
+  padding: 0 10px 20px;
+}
+
+.quote-icon {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  color: rgba(74, 144, 226, 0.2);
+  font-size: 1.8rem;
+}
+
+.staff-card:hover .quote-icon {
+  color: rgba(74, 144, 226, 0.3);
+}
+
+.staff-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555;
+  text-align: left;
+}
+
+.staff-card:hover .staff-text {
+  color: #333;
+}
+
+/* 詳細ボタン */
+.staff-action {
+  margin-top: 15px;
+}
+
+.staff-more {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: rgba(74, 144, 226, 0.05);
+  color: #4a7bd1;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.staff-card:hover .staff-more {
+  background-color: rgba(74, 144, 226, 0.15);
+  color: #4a90e2;
+}
+
+.staff-more i {
+  margin-left: 5px;
+  transition: transform 0.4s ease;
+}
+
+.staff-card:hover .staff-more i {
+  transform: translateX(5px);
+}
+
+/* 装飾要素 */
+.light-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.staff-card:hover .light-effect {
+  opacity: 1;
+}
+
+.decorative-dots {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  bottom: 20px;
+  right: 20px;
+  background-image: radial-gradient(#4a7bd1 1px, transparent 1px);
+  background-size: 8px 8px;
+  opacity: 0.15;
+  transition: all 0.4s ease;
+}
+
+.staff-card:hover .decorative-dots {
+  transform: rotate(10deg) scale(1.1);
+  opacity: 0.3;
+}
+
+.decorative-line {
+  position: absolute;
+  width: 3px;
+  height: 40px;
+  top: 20px;
+  left: 20px;
+  background: url('/assets/images/backgrounds/blue-gradient.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  transition: all 0.4s ease;
+}
+
+.staff-card:hover .decorative-line {
+  transform: scaleY(1.1);
+  opacity: 0.2;
+}
+
+/* コンテンツ部分 */
+.staff-content {
+  position: relative;
+  transition: transform 0.4s ease;
+}

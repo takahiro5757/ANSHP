@@ -1,0 +1,450 @@
+/**
+ * レスポンシブスタイル
+ * 各デバイスサイズに対応するメディアクエリをまとめたファイル
+ */
+
+/* =========================================
+ * 大きいデスクトップ（1200px以上）
+ * ========================================= */
+@media (min-width: 1200px) {
+  /* キャンペーンカード */
+  .campaign-card {
+    width: 280px;
+  }
+  
+  .campaign-card-img-container {
+    height: 220px;
+  }
+  
+  /* コンテナ幅調整 */
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* =========================================
+ * 通常デスクトップ（992px〜1199px）
+ * ========================================= */
+@media (max-width: 1199px) {
+  /* コンテナ幅調整 */
+  .container {
+    max-width: 960px;
+    padding: 0 15px;
+  }
+  
+  /* ヒーロータイトル */
+  .hero-title {
+    font-size: 4rem;
+  }
+  
+  /* ヒーローサブタイトル */
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+/* =========================================
+ * タブレット（768px〜991px）
+ * ========================================= */
+@media (max-width: 991px) {
+  /* 共通スタイル */
+  h1, .h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2, .h2 {
+    font-size: 2rem;
+  }
+  
+  /* コンテナ幅調整 */
+  .container {
+    max-width: 720px;
+  }
+  
+  /* ナビゲーション */
+  .navbar-collapse {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.8rem 1rem;
+    color: var(--primary-color) !important;
+  }
+  
+  .navbar-nav .nav-link::after {
+    left: 0;
+    transform: translateX(0);
+  }
+  
+  .navbar-nav .nav-link:hover::after, 
+  .navbar-nav .nav-link.active::after {
+    width: 40px;
+  }
+  
+  /* メニューボタン */
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  /* ヒーローセクション */
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  /* 強調テキスト */
+  .emphasis-text {
+    font-size: 1.5rem;
+  }
+  
+  /* コンセプトスタイル */
+  .concept-motto {
+    font-size: 1.7rem;
+    padding: 0.4rem 1.5rem;
+  }
+  
+  .concept-highlight {
+    padding: 1.2rem 1.5rem 1.2rem 3.5rem;
+  }
+  
+  .concept-icon {
+    font-size: 1.3rem;
+    left: 1rem;
+  }
+  
+  .highlight-text {
+    font-size: 1.3rem;
+  }
+  
+  /* カード要素 */
+  .card-3d-inner {
+    transform: none !important;
+  }
+  
+  /* インタビューセクション */
+  .interview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* 採用情報 */
+  .process-steps {
+    flex-wrap: wrap;
+  }
+  
+  .process-step {
+    flex: 0 0 50%;
+    margin-bottom: 30px;
+  }
+  
+  /* コンタクト方法 */
+  .contact-method-cards {
+    flex-wrap: wrap;
+  }
+  
+  .contact-method-card {
+    flex: 0 0 calc(50% - 15px);
+    max-width: calc(50% - 15px);
+    margin-bottom: 30px;
+  }
+  
+  /* フッター */
+  .footer {
+    background-color: #ffffff !important;
+    color: #333333 !important;
+  }
+  
+  .footer h3 {
+    color: #333333 !important;
+  }
+  
+  .footer p {
+    color: #333333 !important;
+  }
+  
+  .footer-links a {
+    color: #333333 !important;
+  }
+  
+  .footer-links a:hover {
+    color: #4A7BD1 !important;
+  }
+}
+
+/* =========================================
+ * スマートフォン（576px〜767px）
+ * ========================================= */
+@media (max-width: 767px) {
+  /* 共通スタイル */
+  body {
+    font-size: 0.9rem;
+  }
+  
+  h1, .h1 {
+    font-size: 2rem;
+  }
+  
+  h2, .h2 {
+    font-size: 1.7rem;
+  }
+  
+  h3, .h3 {
+    font-size: 1.4rem;
+  }
+  
+  /* コンテナ幅調整 */
+  .container {
+    max-width: 540px;
+  }
+  
+  /* セクション余白調整 */
+  .section {
+    padding: 40px 0;
+  }
+  
+  /* ヘッダー */
+  .navbar-brand img {
+    max-height: 30px;
+  }
+  
+  /* ヒーロービデオ */
+  .hero-video {
+    position: absolute;
+  }
+  
+  .hero-content {
+    position: relative;
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  /* コンセプトテキスト */
+  .concept-text p {
+    font-size: 0.95rem;
+    padding: 1rem 1.5rem 1rem 3rem;
+  }
+  
+  .concept-icon {
+    font-size: 1.1rem;
+    left: 0.8rem;
+  }
+  
+  .highlight-text {
+    font-size: 1.1rem;
+  }
+  
+  /* ビジネスカード */
+  .business-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* JOIN USテキスト */
+  .join-us-text {
+    font-size: 2rem;
+  }
+  
+  /* カウンター */
+  .counter-up {
+    font-size: 2rem;
+  }
+  
+  .counter-label {
+    font-size: 0.9rem;
+  }
+  
+  /* カードエフェクト */
+  .card-3d:hover .card-3d-inner {
+    transform: none;
+  }
+  
+  /* インタビューセクション */
+  .interview-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* タイムライン */
+  .timeline::before {
+    left: 30px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+  }
+  
+  .timeline-item:before {
+    left: 22px !important;
+    right: auto !important;
+  }
+  
+  /* お問い合わせフォーム */
+  .contact-form-container {
+    padding: 20px;
+  }
+  
+  /* フッター */
+  .footer {
+    padding: 40px 0 20px;
+    background-color: #ffffff !important;
+    color: #333333 !important;
+  }
+  
+  .footer h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #333333 !important;
+  }
+  
+  .footer p {
+    color: #333333 !important;
+  }
+  
+  .footer-links a {
+    color: #333333 !important;
+  }
+  
+  .footer-links a:hover {
+    color: #4A7BD1 !important;
+  }
+  
+  .footer-links {
+    margin-top: 20px;
+  }
+  
+  .footer-links li {
+    width: 100%;
+  }
+  
+  /* 採用情報 */
+  .process-step {
+    flex: 0 0 100%;
+  }
+  
+  /* コンタクト方法 */
+  .contact-method-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* =========================================
+ * 小型スマートフォン（575px以下）
+ * ========================================= */
+@media (max-width: 575px) {
+  /* コンテナ幅調整 */
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  
+  /* 見出し */
+  h1, .h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2, .h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3, .h3 {
+    font-size: 1.2rem;
+  }
+  
+  /* ヒーローセクション */
+  .hero-section {
+    min-height: 80vh;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  /* セクション番号 */
+  .section-with-number::before {
+    font-size: 5rem;
+  }
+  
+  /* コンセプトテキスト */
+  .concept-text p {
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .concept-message {
+    padding: 1rem;
+  }
+  
+  .concept-motto {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.8rem;
+  }
+  
+  /* カードスタイル */
+  .campaign-card {
+    margin: 0 5px 10px;
+  }
+  
+  .campaign-card-img-container {
+    height: 160px;
+  }
+  
+  .campaign-card-body {
+    padding: 0.8rem;
+  }
+  
+  /* セクションタイトル */
+  .section-title, 
+  .concept-section-title {
+    font-size: 1.8rem;
+  }
+  
+  /* ボタン */
+  .btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn-animated-link {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  
+  /* フッター */
+  .footer {
+    background-color: #ffffff !important;
+    color: #333333 !important;
+  }
+  
+  .footer h3 {
+    color: #333333 !important;
+  }
+  
+  .footer p {
+    color: #333333 !important;
+  }
+  
+  .footer-links a {
+    color: #333333 !important;
+  }
+  
+  .footer-links a:hover {
+    color: #4A7BD1 !important;
+  }
+}

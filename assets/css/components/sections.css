@@ -1,0 +1,343 @@
+/**
+ * セクションスタイル
+ * ページの各セクション要素の共通スタイル
+ */
+
+/* 基本セクションスタイル */
+.section {
+  padding: 60px 0;
+  position: relative;
+}
+
+.section::before {
+  content: attr(data-section-number);
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 12rem;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.02);
+  z-index: -1;
+  line-height: 1;
+}
+
+/* 番号付きセクション */
+.section-with-number {
+  position: relative;
+  padding: 60px 0;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  margin: 50px 0;
+  border-radius: 10px;
+}
+
+.section-with-number::before {
+  content: attr(data-section-number);
+  position: absolute;
+  top: 20px;
+  left: 0;
+  font-size: 10rem;
+  font-weight: 900;
+  color: rgba(74, 123, 209, 0.03);
+  line-height: 1;
+  z-index: -1;
+}
+
+/* 偶数番目のセクションのスタイル */
+.section-with-number:nth-child(even) {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* 奇数番目のセクションのスタイル */
+.section-with-number:nth-child(odd) {
+  background: var(--bg-gradation2);
+  background-size: cover;
+}
+
+/* セクションタイトル */
+.section-title, 
+.concept-section-title {
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  color: #000000;
+  margin-bottom: 1.2rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: #000000;
+  transition: width 1s ease;
+}
+
+.section-title.visible::after {
+  width: 100px;
+}
+
+/* セクションサブタイトル */
+.section-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+}
+
+/* セクション余白調整用 */
+.content-after-hero {
+  position: relative;
+  background: var(--bg-gradation);
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 10;
+  margin-top: -1px;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* セクション間の視覚的な区切り */
+.section-divider {
+  height: 3px;
+  background: var(--gradient-blue-light);
+  width: 60%;
+  margin: 0 auto;
+  opacity: 0.7;
+}
+
+/* ビジネスセクション背景 */
+.business-section {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 80px;
+}
+
+/* インタビューセクション背景 */
+#interview {
+  background: rgba(255, 255, 255, 0.95) !important;
+  padding: 120px 0 140px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  overflow: visible;
+  margin: 100px 0;
+  max-width: 100%;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.07) !important;
+  border-radius: 30px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* 装飾線を追加 */
+#interview .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: #000000;
+  opacity: 0.7;
+}
+
+/* 背景装飾要素 */
+#interview .bg-decoration {
+  display: none;
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(74, 144, 226, 0.08) 0%, rgba(74, 144, 226, 0) 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+#interview .bg-decoration-2 {
+  display: none;
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(74, 144, 226, 0.06) 0%, rgba(74, 144, 226, 0) 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* カルーセル関連 */
+.campaign-carousel {
+  margin: 60px 0 40px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.campaign-carousel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background: rgba(255, 255, 255, 1);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.campaign-carousel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background: rgba(255, 255, 255, 1);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.campaign-carousel-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 40px; /* カード間の間隔を広げる */
+  padding: 30px 0;
+  overflow: visible;
+  animation: infiniteScroll 90s linear infinite; /* さらに遅く */
+  width: fit-content;
+}
+
+.campaign-carousel-inner:hover {
+  animation-play-state: paused;
+}
+
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
+/* インタビューセクション専用のタイトルスタイル */
+#interview .section-title {
+  font-size: 3rem;
+  letter-spacing: 0.25em;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Join Usセクション背景 */
+#join-us {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+#join-us::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(79, 168, 255, 0.08) 0%, rgba(79, 168, 255, 0) 70%);
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(30%, -30%);
+}
+
+#join-us::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(79, 168, 255, 0.08) 0%, rgba(79, 168, 255, 0) 70%);
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-30%, 30%);
+}
+
+/* フェードインセクション */
+.fade-in-section {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease, visibility 0.8s;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* セクションタイトルラッパー */
+.section-title-wrapper {
+  text-align: center;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.section-title-wrapper.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* スタガードアイテム（時間差表示） */
+.staggered-item {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.staggered-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* パララックス背景 */
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+/* コンセプトメッセージ */
+.concept-message {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}

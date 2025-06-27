@@ -1,0 +1,647 @@
+/**
+ * お問い合わせページスタイル
+ * CONTACT専用のスタイル
+ */
+
+/* ページヘッダースタイル */
+.page-title {
+  padding: 60px 0 30px;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 144, 226, 0.6)), url('../../images/hero/assets_task_01jv4bd50yfcy947v2qc1a656d_1747124222_img_3.webp');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  margin-bottom: 0;
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  clip-path: none;
+}
+
+.page-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../images/bg-dots.webp') repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.hero-content {
+  display: block;
+  width: 100%;
+  align-items: center;
+}
+
+.hero-text {
+  width: 100%;
+  padding-left: 0;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.hero-image, .hero-graphic, .parallax-bg {
+  display: none;
+}
+
+.page-title h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.page-title .lead {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* アニメーション効果 */
+.typing-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.typing-effect::after {
+  content: '|';
+  position: relative;
+  display: inline-block;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-effect.typing-complete::after {
+  display: none;
+}
+
+.scroll-indicator {
+  display: none !important;
+}
+
+/* セクション間の余白調整 */
+section {
+  margin-bottom: 40px;
+  padding: 20px 0 40px;
+}
+
+.section-with-number {
+  padding: 30px 0;
+}
+
+/* カード関連のスタイル */
+.card-3d {
+  perspective: 1000px;
+  margin-bottom: 30px;
+  height: auto;
+}
+
+.card-3d-inner {
+  border-radius: 15px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #ffffff, #f5f5f5);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  min-height: 250px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-3d:hover .card-3d-inner {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0;
+}
+
+.card-text {
+  margin-bottom: 10px;
+}
+
+.card-button-container {
+  margin-top: auto;
+  padding: 0 0 5px;
+  position: relative;
+  text-align: center;
+}
+
+.card-3d-inner p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.card-3d-inner h3.h4 {
+  margin-bottom: 1rem;
+}
+
+/* カードコンテナの調整 */
+.contact-cards .row {
+  margin-bottom: 30px;
+}
+
+/* ボタンスタイル */
+.btn-contact,
+button.btn-contact,
+a.btn-contact,
+.card-button-container .btn-contact,
+.modal-footer .btn-contact,
+.office-details .btn-contact {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #000000 !important;
+  color: white !important;
+  padding: 12px 24px !important;
+  border-radius: 50px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: none !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+  border: none !important;
+  text-align: center !important;
+  font-size: 0.95rem !important;
+  min-width: 200px !important;
+  width: auto !important;
+  cursor: pointer !important;
+}
+
+.btn-contact:hover,
+.btn-contact:focus,
+.btn-contact:active,
+button.btn-contact:hover,
+button.btn-contact:focus,
+button.btn-contact:active,
+a.btn-contact:hover,
+a.btn-contact:focus,
+a.btn-contact:active,
+.card-button-container .btn-contact:hover,
+.card-button-container .btn-contact:focus,
+.card-button-container .btn-contact:active,
+.modal-footer .btn-contact:hover,
+.modal-footer .btn-contact:focus,
+.modal-footer .btn-contact:active,
+.office-details .btn-contact:hover,
+.office-details .btn-contact:focus,
+.office-details .btn-contact:active {
+  color: white !important;
+  text-decoration: none !important;
+  background: #000000 !important;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2) !important;
+}
+
+.btn-contact i {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+/* カスタムブラックボタン */
+.custom-black-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color), #333) !important;
+  color: #fff !important;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+  min-width: 200px;
+  text-align: center;
+}
+
+.custom-black-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--secondary-color), #4A90E2) !important;
+  z-index: -1;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.custom-black-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: #fff !important;
+}
+
+.custom-black-btn:hover::before {
+  opacity: 1;
+}
+
+.custom-black-btn i {
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* モーダル関連のスタイル */
+.modal-content {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.modal-header {
+  background: linear-gradient(45deg, var(--primary-color), #4fa8ff);
+  color: white;
+  border-bottom: none;
+}
+
+.form-control {
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 15px;
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.btn-submit {
+  background: linear-gradient(45deg, var(--primary-color), #4fa8ff);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* 閉じるボタンのスタイル */
+.btn-close-modal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6c757d, #495057) !important;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  text-align: center;
+  font-size: 0.95rem;
+  min-width: 120px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-close-modal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #495057, #343a40) !important;
+  z-index: -1;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.btn-close-modal:hover, .btn-close-modal:focus {
+  color: white;
+  text-decoration: none;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-close-modal:hover::before {
+  opacity: 1;
+}
+
+/* スペーシング調整 */
+.text-center.mb-5 {
+  margin-bottom: 2rem !important;
+}
+
+/* お問い合わせヘッダー */
+.contact-header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 120px 0 60px;
+  text-align: center;
+}
+
+.contact-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.contact-header p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* お問い合わせフォーム */
+.contact-form-section {
+  padding: 80px 0;
+}
+
+.contact-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-intro h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.contact-intro h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 80px;
+  height: 3px;
+  background: var(--gradient-blue);
+  transform: translateX(-50%);
+}
+
+.contact-intro p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.contact-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.required-label {
+  color: #e74c3c;
+  margin-left: 5px;
+}
+
+textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-check-input {
+  margin-right: 10px;
+}
+
+.form-check-label {
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.form-buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* お問い合わせ方法 */
+.contact-methods {
+  background-color: var(--light-gray);
+  padding: 80px 0;
+}
+
+.contact-methods h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-method-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.contact-method-card {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  flex: 1;
+  max-width: 300px;
+  transition: all 0.3s ease;
+}
+
+.contact-method-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-method-icon {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+.contact-method-title {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.contact-method-text {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+/* よくある質問 */
+.faq-section {
+  padding: 80px 0;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: var(--white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 20px;
+  background-color: var(--light-blue);
+  font-weight: 600;
+  color: var(--primary-color);
+  cursor: pointer;
+  position: relative;
+  padding-right: 40px;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-answer {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  padding: 20px;
+  max-height: 1000px;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 992px) {
+  .hero-text {
+    width: 60%;
+  }
+  
+  .hero-image {
+    width: 40%;
+  }
+  
+  .page-title h1 {
+    font-size: 3rem;
+  }
+  
+  .page-title .lead {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    height: 60vh;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+  
+  .hero-content {
+    flex-direction: column;
+  }
+  
+  .hero-text {
+    width: 90%;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .hero-image, .hero-graphic {
+    display: none;
+  }
+  
+  .page-title h1 {
+    font-size: 2.5rem;
+  }
+}
+/* マップ関連のスタイル */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* body要素の横幅制限を解除 */
+body {
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+/* セクションの最大幅を制限 */
+.section .container {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+}
+

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT | 株式会社ANSTEYPE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/base/variables.css">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/base/animations.css">
+    <link rel="stylesheet" href="../../assets/css/components/header.css">
+    <link rel="stylesheet" href="../../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../../assets/css/components/buttons.css">
+    <link rel="stylesheet" href="../../assets/css/components/cards.css">
+    <link rel="stylesheet" href="../../assets/css/components/sections.css">
+    <link rel="stylesheet" href="../../assets/css/components/page-hero.css">
+    <link rel="stylesheet" href="../../assets/css/pages/contact.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <!-- フッター背景色強制上書き（最優先） -->
+    <link href="../../assets/css/footer-override.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- ヘッダー -->
+    <div id="header-placeholder">
+        <!-- ヘッダーが動的に読み込まれます -->
+    </div>
+
+    <!-- Page Title -->
+    <section class="page-title contact-bg">
+        <div class="container">
+            <h1 class="typing-effect animate__animated animate__fadeInDown">CONTACT</h1>
+            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">お気軽にお問い合わせください</p>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+            <span>スクロール</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-with-number" data-aos="fade-up">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
+                        <h2 class="section-title" data-aos="zoom-in" data-aos-delay="200">どんなことでもご相談ください</h2>
+                        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="400">
+                            採用に関するお問い合わせ、サービスについてのご質問など<br>
+                            どんなことでもお気軽にご連絡ください。
+                        </p>
+                    </div>
+                    
+                    <div class="row contact-cards">
+                        <!-- Corporate Contact -->
+                        <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+                            <div class="card-3d h-100">
+                                <div class="card-3d-inner card-effect p-4 text-center">
+                                    <div class="card-content">
+                                        <div class="card-text">
+                                            <h3 class="h4 mb-2">法人の方</h3>
+                                            <p>
+                                                セールスプロモーションについてのご相談、<br>
+                                                販促イベントの企画・運営のご依頼、<br>
+                                                コンサルティングのご相談など、お気軽にお問い合わせください。
+                                            </p>
+                                        </div>
+                                        <div class="card-button-container">
+                                            <a href="#" class="contact-button custom-black-btn" data-bs-toggle="modal" data-bs-target="#corporateModal">
+                                                <i class="fas fa-building"></i> 法人の方はこちら
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Individual Contact -->
+                        <div class="col-md-6 mb-4" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
+                            <div class="card-3d h-100">
+                                <div class="card-3d-inner card-effect p-4 text-center">
+                                    <div class="card-content">
+                                        <div class="card-text">
+                                            <h3 class="h4 mb-2">個人の方</h3>
+                                            <p>
+                                                お仕事のご相談や採用に関するご質問など、<br>
+                                                キャリアアドバイザーが丁寧に<br>
+                                                サポートさせていただきます。
+                                            </p>
+                                        </div>
+                                        <div class="card-button-container">
+                                            <a href="#" class="contact-button custom-black-btn" data-bs-toggle="modal" data-bs-target="#individualModal">
+                                                <i class="fas fa-user"></i> 個人の方はこちら
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Section -->
+    <section class="section section-with-number business-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
+                        <h2 class="section-title" data-aos="zoom-in" data-aos-delay="200">本社所在地</h2>
+                        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="400">アクセス情報</p>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-lg-4" data-aos="fade-right" data-aos-delay="600">
+                            <div class="card-effect p-4 h-100">
+                                <div class="office-details">
+                                    <h3 class="h5 mb-3">本社</h3>
+                                    <p>
+                                        〒344-0067<br>
+                                        埼玉県春日部市中央1丁目2番2号7F<br>
+                                        JR「春日部駅」西口より徒歩5分
+                                    </p>
+                                    <p class="mt-3">
+                                        <i class="fas fa-phone-alt me-2"></i> TEL: 048-872-6881<br>
+                                        <i class="fas fa-fax me-2"></i> FAX: 048-872-6882<br>
+                                        <i class="fas fa-clock me-2"></i> 営業時間: 9:00-18:00（土日祝日を除く）
+                                    </p>
+                                    <div class="mt-4">
+                                        <a href="https://maps.app.goo.gl/sndpXGdJSAnvDfQQ9" target="_blank" class="contact-button custom-black-btn">
+                                            <i class="fas fa-map-marker-alt"></i> Googleマップで見る
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8" data-aos="fade-left" data-aos-delay="800">
+                            <div class="office-map mb-4 h-100">
+                                <div class="map-container">
+                                    <!-- Google Maps埋め込み -->
+                                    <iframe 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3228.418117534177!2d139.74683847676816!3d35.97425057235089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018bb4d4d348b87%3A0x5e39f3ed4ac394ab!2z44CSMzQ0LTAwNjcg5Z-8546J5Yy65pil5pel6YOo5biC5Lit5aSu77yR5LiB55uu77yS4oiS77ySIO-8lydF!5e0!3m2!1sja!2sjp!4v1716876044422!5m2!1sja!2sjp"
+                                        width="100%" 
+                                        height="100%" 
+                                        allowfullscreen 
+                                        loading="lazy" 
+                                        referrerpolicy="no-referrer-when-downgrade">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Contact Modal -->
+    <div class="modal fade" id="corporateModal" tabindex="-1" aria-labelledby="corporateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="corporateModalLabel">法人のお客様 お問い合わせフォーム</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="corporateForm">
+                        <div class="mb-3">
+                            <label for="companyName" class="form-label">会社名 <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="companyName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="department" class="form-label">部署名</label>
+                            <input type="text" class="form-control" id="department">
+                        </div>
+                        <div class="mb-3">
+                            <label for="corporateName" class="form-label">お名前 <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="corporateName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="corporateEmail" class="form-label">メールアドレス <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="corporateEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="corporatePhone" class="form-label">電話番号</label>
+                            <input type="tel" class="form-control" id="corporatePhone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="corporateInquiryType" class="form-label">お問い合わせ内容 <span class="text-danger">*</span></label>
+                            <select class="form-select" id="corporateInquiryType" required>
+                                <option value="" selected disabled>選択してください</option>
+                                <option value="販促イベント">販促イベントについて</option>
+                                <option value="コンサルティング">コンサルティングについて</option>
+                                <option value="広告・マーケティング">広告・マーケティングについて</option>
+                                <option value="その他">その他</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="corporateMessage" class="form-label">お問い合わせ詳細 <span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="corporateMessage" rows="5" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-close-modal" data-bs-dismiss="modal">閉じる</button>
+                    <button type="button" class="contact-button custom-black-btn" onclick="submitCorporateForm()">
+                        <i class="fas fa-paper-plane"></i> 送信する
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Individual Contact Modal -->
+    <div class="modal fade" id="individualModal" tabindex="-1" aria-labelledby="individualModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="individualModalLabel">個人の方 お問い合わせフォーム</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="individualForm">
+                        <div class="mb-3">
+                            <label for="individualName" class="form-label">お名前 <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="individualName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="individualEmail" class="form-label">メールアドレス <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="individualEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="individualPhone" class="form-label">電話番号</label>
+                            <input type="tel" class="form-control" id="individualPhone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="individualInquiryType" class="form-label">お問い合わせ内容 <span class="text-danger">*</span></label>
+                            <select class="form-select" id="individualInquiryType" required>
+                                <option value="" selected disabled>選択してください</option>
+                                <option value="採用について">採用について</option>
+                                <option value="キャンペーンガールについて">キャンペーンガールについて</option>
+                                <option value="その他">その他</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="individualMessage" class="form-label">お問い合わせ詳細 <span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="individualMessage" rows="5" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-close-modal" data-bs-dismiss="modal">閉じる</button>
+                    <button type="button" class="contact-button custom-black-btn" onclick="submitIndividualForm()">
+                        <i class="fas fa-paper-plane"></i> 送信する
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- メッセージモーダル -->
+    <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="messageModalLabel">お問い合わせ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="messageModalBody">
+                    <!-- メッセージが入ります -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-close-modal" data-bs-dismiss="modal">閉じる</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <div id="footer-placeholder">
+        <!-- フッターが動的に読み込まれます -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true
+        });
+        
+        // ヘッダーとフッターの読み込み
+        $(function() {
+            $("#header-placeholder").load("../../assets/parts/header.html");
+            $("#footer-placeholder").load("../../assets/parts/footer.html");
+        });
+        
+        // タイピングエフェクト
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('.typing-effect');
+            if (!title) return;
+            
+            const titleText = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < titleText.length) {
+                    title.textContent += titleText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 80);
+                } else {
+                    // タイピングが完了したらカーソルを非表示にするクラスを追加
+                    setTimeout(() => {
+                        title.classList.add('typing-complete');
+                    }, 1500);
+                }
+            };
+            
+            // ページ読み込み後にタイピングエフェクトを開始
+            setTimeout(typeWriter, 800);
+        });
+        
+        // スクロールインジケーターのクリックイベント
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        if (scrollIndicator) {
+            scrollIndicator.addEventListener('click', function() {
+                const section = document.querySelector('.section');
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+
+        // フォーム送信処理 - 法人
+        function submitCorporateForm() {
+            const form = document.getElementById('corporateForm');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            
+            // 送信ボタンを無効化
+            const submitButton = document.querySelector('#corporateModal .contact-button');
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 送信中...';
+            
+            // フォームデータの取得
+            const companyName = document.getElementById('companyName').value;
+            const department = document.getElementById('department').value;
+            const name = document.getElementById('corporateName').value;
+            const email = document.getElementById('corporateEmail').value;
+            const phone = document.getElementById('corporatePhone').value;
+            const inquiryType = document.getElementById('corporateInquiryType').value;
+            const message = document.getElementById('corporateMessage').value;
+            
+            // メール本文を作成
+            const subject = `【法人お問い合わせ】${companyName}様 - ${inquiryType}`;
+            const body = `法人のお客様からお問い合わせがありました。\n\n` +
+                        `■会社名：${companyName}\n` +
+                        `■部署名：${department}\n` +
+                        `■お名前：${name}\n` +
+                        `■メールアドレス：${email}\n` +
+                        `■電話番号：${phone}\n` +
+                        `■お問い合わせ内容：${inquiryType}\n\n` +
+                        `■お問い合わせ詳細：\n${message}`;
+            
+            // メーラーでメール作成
+            const mailtoLink = `mailto:t.honda@festal-inc.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+            
+            // 少し待ってから成功メッセージを表示
+            setTimeout(() => {
+                // モーダルを閉じる
+                const modal = bootstrap.Modal.getInstance(document.getElementById('corporateModal'));
+                modal.hide();
+                
+                // 成功メッセージをモーダルで表示
+                document.getElementById('messageModalLabel').textContent = 'お問い合わせ';
+                document.getElementById('messageModalBody').innerHTML = 
+                    `<div class="text-center">
+                        <i class="fas fa-check-circle text-success mb-3" style="font-size: 3rem;"></i>
+                        <p>メールアプリが起動しました。メールを送信してください。</p>
+                        <p>メールアプリが起動しなかった場合は、直接以下のアドレスまでご連絡ください：<br>
+                        <a href="mailto:t.honda@festal-inc.com">t.honda@festal-inc.com</a></p>
+                    </div>`;
+                new bootstrap.Modal(document.getElementById('messageModal')).show();
+                
+                // フォームをリセット
+                form.reset();
+                
+                // 送信ボタンを復活
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> 送信する';
+            }, 1000);
+        }
+
+        // フォーム送信処理 - 個人
+        function submitIndividualForm() {
+            const form = document.getElementById('individualForm');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            
+            // 送信ボタンを無効化
+            const submitButton = document.querySelector('#individualModal .contact-button');
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 送信中...';
+            
+            // フォームデータの取得
+            const name = document.getElementById('individualName').value;
+            const email = document.getElementById('individualEmail').value;
+            const phone = document.getElementById('individualPhone').value;
+            const inquiryType = document.getElementById('individualInquiryType').value;
+            const message = document.getElementById('individualMessage').value;
+            
+            // メール本文を作成
+            const subject = `【個人お問い合わせ】${name}様 - ${inquiryType}`;
+            const body = `個人のお客様からお問い合わせがありました。\n\n` +
+                        `■お名前：${name}\n` +
+                        `■メールアドレス：${email}\n` +
+                        `■電話番号：${phone}\n` +
+                        `■お問い合わせ内容：${inquiryType}\n\n` +
+                        `■お問い合わせ詳細：\n${message}`;
+            
+            // メーラーでメール作成
+            const mailtoLink = `mailto:t.honda@festal-inc.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+            
+            // 少し待ってから成功メッセージを表示
+            setTimeout(() => {
+                // モーダルを閉じる
+                const modal = bootstrap.Modal.getInstance(document.getElementById('individualModal'));
+                modal.hide();
+                
+                // 成功メッセージをモーダルで表示
+                document.getElementById('messageModalLabel').textContent = 'お問い合わせ';
+                document.getElementById('messageModalBody').innerHTML = 
+                    `<div class="text-center">
+                        <i class="fas fa-check-circle text-success mb-3" style="font-size: 3rem;"></i>
+                        <p>メールアプリが起動しました。メールを送信してください。</p>
+                        <p>メールアプリが起動しなかった場合は、直接以下のアドレスまでご連絡ください：<br>
+                        <a href="mailto:t.honda@festal-inc.com">t.honda@festal-inc.com</a></p>
+                    </div>`;
+                new bootstrap.Modal(document.getElementById('messageModal')).show();
+                
+                // フォームをリセット
+                form.reset();
+                
+                // 送信ボタンを復活
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> 送信する';
+            }, 1000);
+        }
+        
+        // ナビゲーションバーのアクティブクラス切り替え
+        const currentLocation = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            const linkPath = link.getAttribute('href');
+            if (currentLocation === linkPath || currentLocation.startsWith(linkPath) && linkPath !== '/') {
+                link.classList.add('active');
+            } else if (linkPath === '/' && currentLocation === '/') {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+        
+        // スクロール時のヘッダースタイル変更
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ホバー時の色変化を防止するJavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.btn-contact');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#000000';
+                    this.style.color = 'white';
+                });
+                button.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '#000000';
+                    this.style.color = 'white';
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

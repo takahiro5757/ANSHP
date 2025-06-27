@@ -1,0 +1,233 @@
+/**
+ * ヘッダースタイル
+ * ヘッダー、ナビゲーション要素のスタイル
+ */
+
+/* ヘッダー基本スタイル */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 1000;
+  transition: all var(--transition-fast) ease;
+  background: none;
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 10px 0;
+}
+
+/* ロゴスタイル */
+.logo {
+  max-height: 50px;
+  transition: all var(--transition-fast) ease;
+  filter: brightness(0) invert(1); /* 白色に変換 */
+}
+
+.header.scrolled .logo {
+  max-height: 40px;
+  filter: none; /* 元の色に戻す */
+}
+
+.logo-white {
+  display: block;
+}
+
+.logo-black {
+  display: none;
+}
+
+.header.scrolled .logo-white {
+  display: none;
+}
+
+.header.scrolled .logo-black {
+  display: block;
+}
+
+/* ナビゲーションスタイル */
+.navbar {
+  height: var(--header-height);
+  padding: 0;
+  transition: all var(--transition-fast) ease;
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  font-weight: 500;
+  transition: all var(--transition-fast) ease;
+  color: var(--white);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--secondary-color);
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--secondary-color);
+  transform: translateX(-50%);
+  transition: width var(--transition-fast) ease;
+}
+
+.navbar-nav .nav-link:hover::after, 
+.navbar-nav .nav-link.active::after {
+  width: 80%;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.header.scrolled .navbar-nav .nav-link {
+  color: var(--primary-color);
+}
+
+.header.scrolled .navbar-nav .nav-link:hover,
+.header.scrolled .navbar-nav .nav-link.active {
+  color: var(--secondary-color);
+}
+
+/* ドロップダウンメニュー */
+.dropdown-menu {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  transition: all var(--transition-fast) ease;
+}
+
+.dropdown-item:hover, 
+.dropdown-item:focus,
+.dropdown-item.active {
+  background-color: var(--light-blue);
+  color: var(--secondary-color);
+}
+
+.dropdown-toggle::after {
+  margin-left: 0.5em;
+  vertical-align: 0.15em;
+  border-top: 0.4em solid;
+  transition: transform var(--transition-fast) ease;
+}
+
+.dropdown-toggle[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+/* モバイルメニューボタン */
+.menu-button {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  margin-left: 20px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: var(--white);
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: all var(--transition-fast) ease;
+}
+
+.header.scrolled .menu-button span {
+  background: var(--primary-color);
+}
+
+.menu-button span:nth-child(1) {
+  top: 0;
+}
+
+.menu-button span:nth-child(2) {
+  top: 10px;
+}
+
+.menu-button span:nth-child(3) {
+  top: 20px;
+}
+
+.menu-button.open span:nth-child(1) {
+  top: 10px;
+  transform: rotate(135deg);
+}
+
+.menu-button.open span:nth-child(2) {
+  opacity: 0;
+  left: -30px;
+}
+
+.menu-button.open span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-135deg);
+}
+
+/* ホームページ専用のヘッダースタイル */
+.home-page .header {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.home-page .header .nav-link {
+  color: var(--white);
+}
+
+.home-page .header .menu-button span {
+  background: var(--white);
+}
+
+.home-page .header.scrolled {
+  background-color: var(--white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.home-page .header.scrolled .nav-link {
+  color: var(--primary-color);
+}
+
+.home-page .header.scrolled .menu-button span {
+  background: var(--primary-color);
+}
+
+/* 採用ページ専用のヘッダースタイル */
+.recruit-page .navbar-nav .nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  font-weight: 500;
+  transition: all var(--transition-fast) ease;
+  color: var(--white);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+}

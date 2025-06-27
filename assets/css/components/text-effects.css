@@ -1,0 +1,173 @@
+/**
+ * テキストエフェクト
+ * 特殊なテキスト装飾・エフェクトの共通スタイル
+ */
+
+/* ハイライトテキスト（画像ベース） */
+.highlight-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: inline;
+  padding: 0 0.2rem;
+  color: #4A90E2;
+  background: url('/assets/images/backgrounds/blue-gradient.webp') center/200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-position: center;
+}
+
+/* フォールバック対応 */
+@supports not (-webkit-background-clip: text) {
+  .highlight-text {
+    color: #4A90E2 !important;
+    -webkit-text-fill-color: #4A90E2 !important;
+  }
+}
+
+/* ブルーテキスト（画像ベース） */
+.blue-text {
+  font-weight: 700;
+  color: #4A90E2;
+  background: url('/assets/images/backgrounds/blue-gradient.webp') center/200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-position: center;
+}
+
+/* フォールバック対応 */
+@supports not (-webkit-background-clip: text) {
+  .blue-text {
+    color: #4A90E2 !important;
+    -webkit-text-fill-color: #4A90E2 !important;
+  }
+}
+
+/* ブラックテキスト */
+.black-text {
+  color: #000000 !important;
+  font-weight: 700;
+}
+
+/* 強調テキスト */
+.emphasis-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+}
+
+/* 洗練されたコンセプトテキスト */
+.refined-concept {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* コンセプトモットー */
+.concept-motto,
+.concept-motto-clean {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #4A90E2;
+  background: url('/assets/images/backgrounds/blue-gradient.webp') center/200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-position: center;
+}
+
+/* フォールバック対応 */
+@supports not (-webkit-background-clip: text) {
+  .concept-motto,
+  .concept-motto-clean {
+    color: #4A90E2 !important;
+    -webkit-text-fill-color: #4A90E2 !important;
+  }
+}
+
+/* JOIN USテキスト */
+.join-us-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  position: relative;
+  color: #4A90E2;
+  background: url('/assets/images/backgrounds/blue-gradient.webp') center/200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-position: center;
+}
+
+/* フォールバック対応 */
+@supports not (-webkit-background-clip: text) {
+  .join-us-text {
+    color: #4A90E2 !important;
+    -webkit-text-fill-color: #4A90E2 !important;
+  }
+}
+
+.join-us-text::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: url('/assets/images/backgrounds/blue-gradient.webp') center/200% 200%;
+  background-position: center;
+  opacity: 0.6;
+}
+
+/* JOIN強調テキスト */
+.join-emphasis {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #4A90E2;
+  background: url('/assets/images/backgrounds/blue-gradient.webp') center/200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-position: center;
+}
+
+/* フォールバック対応 */
+@supports not (-webkit-background-clip: text) {
+  .join-emphasis {
+    color: #4A90E2 !important;
+    -webkit-text-fill-color: #4A90E2 !important;
+  }
+}
+
+/* サブタイトル装飾 */
+.subtitle-decoration {
+  color: #4A90E2;
+  font-weight: 300;
+  margin: 0 10px;
+}
+
+/* タイピングエフェクト */
+.typing-effect {
+  border-right: 2px solid #4A90E2;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { border-color: #4A90E2; }
+  51%, 100% { border-color: transparent; }
+}
+
+/* テキストのパルス効果 */
+@keyframes textShadowPulse {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(74, 144, 226, 0.6);
+  }
+} 

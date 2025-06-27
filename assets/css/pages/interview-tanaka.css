@@ -1,0 +1,289 @@
+/**
+ * 田中健太インタビューページ用スタイル
+ */
+
+/* テーマカラー */
+:root {
+  --interview-accent: #3a7bd5;
+  --interview-dark: #1b2733;
+  --interview-light: #f0f4f8;
+  --interview-gradient: linear-gradient(135deg, #3a7bd5, #3f8cf7);
+  --interview-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  --transition-smooth: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* ヒーロー背景のカスタマイズ */
+.hero-split-right {
+  background: linear-gradient(to right, rgba(27, 39, 51, 0.9), rgba(27, 39, 51, 0.7)) !important;
+  text-align: left !important;
+  writing-mode: horizontal-tb !important;
+}
+
+.hero-decoration {
+  background: radial-gradient(circle, rgba(58, 123, 213, 0.1), transparent 70%) !important;
+}
+
+.hero-decoration::after {
+  background: radial-gradient(circle, rgba(58, 123, 213, 0.15), transparent 70%) !important;
+}
+
+.interview-bg::after {
+  background: linear-gradient(135deg, var(--interview-accent), transparent 70%) !important;
+}
+
+.interview-bg::before {
+  background: radial-gradient(circle at 30% 70%, rgba(58, 123, 213, 0.4), transparent 60%) !important;
+}
+
+/* 背景画像 - インラインスタイルを移行 */
+.interview-bg {
+  background-image: url('../../../assets/images/interviews/assets_task_01jv6xr22cek895jt1xcbcajg1_1747210556_img_2.webp') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  opacity: 1 !important;
+  transition: transform 0.3s ease-out !important;
+}
+
+/* プロフィール設定 */
+.profile-name {
+  color: #fff !important;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3) !important;
+  text-align: left !important;
+  writing-mode: horizontal-tb !important;
+  display: block !important;
+}
+
+.profile-info-wrap {
+  text-align: left !important;
+  writing-mode: horizontal-tb !important;
+  display: block !important;
+}
+
+.profile-image-border {
+  border: 2px solid var(--interview-accent) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* プロフィール画像のホバーエフェクト */
+.profile-image-container:hover .profile-image-border {
+  transform: translate(8px, 8px) !important;
+  border-color: var(--interview-accent) !important;
+}
+
+.profile-image-container:hover .profile-image-wrap {
+  transform: rotate(-2deg) !important;
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    border-color: rgba(58, 123, 213, 1);
+    transform: translate(0, 0);
+  }
+  50% {
+    border-color: rgba(63, 140, 247, 0.7);
+    transform: translate(5px, 5px);
+  }
+}
+
+.profile-image-wrap::after {
+  background: linear-gradient(135deg, transparent 40%, rgba(58, 123, 213, 0.3)) !important;
+}
+
+.profile-info {
+  background: rgba(27, 39, 51, 0.6) !important;
+  border-left: 2px solid var(--interview-accent) !important;
+  display: inline-block !important;
+  text-align: left !important;
+  writing-mode: horizontal-tb !important;
+}
+
+.profile-quote {
+  background: rgba(27, 39, 51, 0.3) !important;
+  border-left: 3px solid rgba(58, 123, 213, 0.6) !important;
+  text-align: left !important;
+  writing-mode: horizontal-tb !important;
+}
+
+.profile-quote::before {
+  color: var(--interview-accent) !important;
+}
+
+.profile-quote::after {
+  background: linear-gradient(to right, var(--interview-accent), transparent) !important;
+}
+
+.profile-quote .quote-highlight {
+  background: radial-gradient(circle, rgba(58, 123, 213, 0.15), transparent 70%) !important;
+}
+
+/* キーワードハイライト */
+.keyword {
+  font-weight: 700;
+  color: var(--interview-accent);
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.keyword:hover {
+  color: var(--interview-accent);
+  transform: translateY(-2px);
+}
+
+.keyword::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(58, 123, 213, 0.2);
+}
+
+/* タグスタイル */
+.interview-tag {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  background: #fff;
+  color: var(--interview-accent);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.interview-tag:hover {
+  background: var(--interview-accent);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* セクションカスタマイズ */
+.interview-section {
+  border-left: 3px solid var(--interview-accent) !important;
+}
+
+.interview-section:nth-child(even) {
+  border-left: none !important;
+  border-right: 3px solid var(--interview-accent) !important;
+}
+
+.interview-question::before {
+  color: var(--interview-accent) !important;
+}
+
+.interview-answer::before {
+  color: var(--interview-accent) !important;
+}
+
+/* 田中さん特有の背景色とグラデーション */
+.interview-content {
+  background: #f0f4f8 !important;
+  background-image: 
+    radial-gradient(circle at 90% 10%, rgba(58, 123, 213, 0.05), transparent 400px),
+    radial-gradient(circle at 10% 90%, rgba(58, 123, 213, 0.03), transparent 300px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95)) !important;
+}
+
+/* フッター */
+.interview-footer {
+  background: linear-gradient(to bottom, var(--interview-light) 0%, #e5eef8 100%) !important;
+}
+
+.interview-footer::before,
+.interview-footer::after {
+  background: radial-gradient(circle, rgba(58, 123, 213, 0.1), transparent 70%) !important;
+}
+
+.interview-footer h3 {
+  color: var(--interview-dark) !important;
+  background: var(--interview-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.interview-nav-btn {
+  color: var(--interview-dark) !important;
+}
+
+.interview-nav-btn:hover {
+  background: var(--interview-gradient) !important;
+  color: #fff !important;
+  transform: translateY(-5px) scale(1.05) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 装飾要素 */
+.highlight-bubble {
+  background: var(--interview-gradient) !important;
+}
+
+.circle-decoration {
+  background: var(--interview-accent) !important;
+}
+
+/* パララックス効果 */
+.interview-bg {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-out;
+}
+
+.hero-decoration {
+  transition: transform 0.5s ease-out;
+}
+
+.profile-image-wrap {
+  transition: transform 0.5s ease;
+}
+
+/* 装飾用の追加要素 */
+.highlight-bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.circle-decoration {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* キーワードのアニメーション */
+.keyword {
+  transition: all 0.3s ease;
+}
+
+.keyword:hover {
+  color: var(--interview-accent);
+  transform: translateY(-2px);
+}
+
+/* インタビューセクションの表示アニメーション */
+.interview-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease-out;
+}
+
+.interview-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* インタビューメディアのコンテナスタイル修正 */
+.interview-media {
+  display: flex !important;
+  flex-direction: row !important;
+  text-align: left !important;
+  writing-mode: horizontal-tb !important;
+} 

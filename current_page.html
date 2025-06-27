@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANSTEYPE | 自分らしく -Be yourself –</title>
+    <meta name="description" content="ANSTEYPEは、多様性を認め、かけがえのない仲間との出会いが次の未来を創り出す企業です。">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 外部CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.css">
+
+    <!-- 基本スタイル -->
+    <link href="assets/css/base/variables.css" rel="stylesheet">
+    <link href="assets/css/base/reset.css" rel="stylesheet">
+    <link href="assets/css/base/typography.css" rel="stylesheet">
+    <link href="assets/css/base/animations.css" rel="stylesheet">
+    
+    <!-- コンポーネントCSS -->
+    <link href="assets/css/components/header.css" rel="stylesheet">
+    <link href="assets/css/components/footer.css" rel="stylesheet">
+    <link href="assets/css/components/buttons.css" rel="stylesheet">
+    <link href="assets/css/components/cards.css" rel="stylesheet">
+    <link href="assets/css/components/sections.css" rel="stylesheet">
+    
+    <!-- ページ固有CSS -->
+    <link href="assets/css/pages/home.css" rel="stylesheet">
+    
+    <!-- レスポンシブCSS -->
+    <link href="assets/css/responsive.css" rel="stylesheet">
+</head>
+<body class="home-page">
+    <!-- パーティクル背景 -->
+    <!-- <div id="particles-js"></div> -->
+
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="/assets/images/logo_loading.png" alt="ANSTEYPE" class="logo">
+                </a>
+                <button class="navbar-toggler menu-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/about/">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/recruit/">RECRUIT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/interview/">INTERVIEWS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/contact/">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-video">
+            <video autoplay loop muted playsinline poster="assets/images/hero-poster.jpg">
+                <source src="assets/videos/853844-hd_1920_1080_25fps.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content-wrapper">
+            <div class="hero-content">
+                <h1 class="hero-title animate__animated animate__fadeInDown" id="hero-title">
+                    自分らしく<br>
+                    <span class="typing-effect" data-text="-Be yourself –">-Be yourself –</span>
+                </h1>
+                <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                    多様性を認め合える世界へ<br>
+                    かけがえのない仲間との出会いが、次の未来を創り出す。
+                </p>
+            </div>
+        </div>
+        <!-- トランジションオーバーレイ -->
+        <div class="page-transition-overlay"></div>
+    </section>
+
+    <!-- Content After Hero -->
+    <div class="content-after-hero">
+        <!-- Concept Section -->
+        <section id="whats-ansteype" class="section section-with-number fade-in-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="text-center section-title-wrapper">
+                            <h2 class="section-title concept-section-title">CONCEPT</h2>
+                            <p class="section-subtitle">
+                                <strong class="emphasis-text fade-in-text"><span class="blue-text">誰もが</span><span class="black-text">自分らしく</span><span class="blue-text">輝ける場所を</span></strong><br>
+                                <span class="subtitle-decoration">―</span> <span class="refined-concept">多様な個性が交わり、新たな価値を創造する</span> <span class="subtitle-decoration">―</span>
+                            </p>
+                        </div>
+                        <div class="concept-text stacked-items">
+                            <p class="stacked-item concept-highlight concept-3d-card staggered-item fade-in-left" data-delay="200">
+                                <i class="fas fa-trophy concept-icon"></i> 誰かが<strong class="highlight-text">成功した</strong>ときに、僕らは<strong class="highlight-text">「喜びを分かち合おう」</strong>
+                                <span class="card-shine"></span>
+                            </p>
+                            <p class="stacked-item concept-highlight concept-3d-card staggered-item fade-in" data-delay="400">
+                                <i class="fas fa-hands-helping concept-icon"></i> 誰かが<strong class="highlight-text">躓いた</strong>そのときに、僕らは<strong class="highlight-text">「手を差し伸べよう」</strong>
+                                <span class="card-shine"></span>
+                            </p>
+                            <p class="stacked-item concept-highlight concept-3d-card staggered-item fade-in-right" data-delay="600">
+                                <i class="fas fa-heart concept-icon"></i> 誰かが<strong class="highlight-text">助けてくれた</strong>ときに僕らは<strong class="highlight-text">「感謝を口にしよう」</strong>
+                                <span class="card-shine"></span>
+                            </p>
+                            <div class="concept-tagline text-center staggered-item fade-in-up" data-delay="800">
+                                <span class="concept-motto-clean">多様性が創る、豊かな未来</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Business Section -->
+        <section id="business" class="section section-with-number business-section fade-in-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="text-center section-title-wrapper">
+                            <h2 class="section-title concept-section-title">BUSINESS</h2>
+                            <p class="section-subtitle">
+                                <span class="refined-concept">私たちは、お客様のビジネスの成長を支援する<br>
+                                プロフェッショナル集団です</span>
+                            </p>
+                        </div>
+                        
+                        <div class="row business-cards">
+                            <div class="col-md-4 mb-4 staggered-item">
+                                <div class="business-card fade-in-left" data-delay="200">
+                                    <div class="business-card-icon">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <div class="business-card-circle">
+                                    </div>
+                                    <h3 class="h4 business-card-title">パートナー<br>コンサルティング</h3>
+                                    <p>クライアント企業の課題に対して多角的な情報収集・分析。ニーズに合わせた最適な提案をします。</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4 staggered-item">
+                                <div class="business-card fade-in" data-delay="400">
+                                    <div class="business-card-icon">
+                                        <i class="fas fa-bullhorn"></i>
+                                    </div>
+                                    <div class="business-card-circle">
+                                    </div>
+                                    <h3 class="h4 business-card-title">セールス<br>プロモーション</h3>
+                                    <p>携帯ショップや家電量販店での販売促進活動。新商品の拡販イベントなどを実施します。</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4 staggered-item">
+                                <div class="business-card fade-in-right" data-delay="600">
+                                    <div class="business-card-icon">
+                                        <i class="fas fa-store"></i>
+                                    </div>
+                                    <div class="business-card-circle">
+                                    </div>
+                                    <h3 class="h4 business-card-title">販売代理店<br>事業</h3>
+                                    <p>通信事業における代理店契約に基づいた商材の提案。経験豊富な人材が対応します。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-divider"></div>
+
+        <!-- Join Us Section -->
+        <section id="join-us" class="section section-with-number fade-in-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="text-center section-title-wrapper">
+                            <h2 class="section-title concept-section-title">JOIN US</h2>
+                            <p class="section-subtitle">
+                                <span class="refined-concept">経験者・未経験者関係なく、『考え方』が一致した方を採用条件としています。<br>
+                                私たちと一緒に働く仲間を募集しています。</span>
+                            </p>
+                        </div>
+                        
+                        <div class="row align-items-stretch mt-5">
+                            <div class="col-md-6 staggered-item mb-4 mb-md-0">
+                                <div class="card-effect">
+                                    <h3 class="card-title-modern">ANSTEYPEの強み</h3>
+                                    <div class="join-card-content">
+                                        <div class="counter-item staggered-item">
+                                            <div class="counter-up" data-target="300">0</div>
+                                            <div class="counter-label">人以上の仲間が<br>活躍中</div>
+                                        </div>
+                                        <div class="counter-item staggered-item">
+                                            <div class="counter-up" data-target="98">0</div>
+                                            <div class="counter-label">%の社員満足度</div>
+                                        </div>
+                                        <div class="counter-item staggered-item">
+                                            <div class="counter-up" data-target="25">0</div>
+                                            <div class="counter-label">歳の平均年齢</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 staggered-item">
+                                <div class="card-effect text-center d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h3 class="card-title-modern">ANSTEYPEで働く</h3>
+                                        <p class="join-card-message">私たちは常に<span class="join-emphasis">新しい仲間</span>を募集しています。<br>多様な個性を持つ仲間と一緒に、<span class="join-emphasis">新しい未来</span>を創りませんか？</p>
+                                    </div>
+                                    <div class="mt-4">
+                                        <span class="join-us-text">JOIN US</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-5 staggered-item">
+                            <a href="/pages/recruit/" class="btn-animated-link">採用情報はこちら <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-divider"></div>
+
+        <!-- Interview Section -->
+        <section id="interview" class="section section-with-number business-section fade-in-section">
+            <!-- 背景装飾要素 -->
+            <div class="bg-decoration"></div>
+            <div class="bg-decoration-2"></div>
+            
+            <div class="interview-content">
+                <h2 class="section-title concept-section-title text-center">INTERVIEW</h2>
+                <p class="section-subtitle text-center">
+                    <span class="refined-concept">ANSTEYPEで活躍する社員たちの声<br>
+                    多様な視点から見た私たちの強みです</span>
+                </p>
+            
+                <div class="staff-testimonials">
+                    <!-- 社員1 -->
+                    <div class="staff-card-wrapper">
+                        <div class="staff-card">
+                            <div class="staff-card-inner">
+                                <div class="light-effect"></div>
+                                <div class="decorative-dots"></div>
+                                <div class="decorative-line"></div>
+                                <a href="/pages/interview/" class="text-decoration-none text-reset">
+                                    <div class="staff-image-container">
+                                        <div class="staff-image-border">
+                                            <img src="assets/images/campaign-girls/1000_F_1040969700_zi5YgjcK69J3GNVdlXDzGBOpwUKVZDqh.jpg" alt="田中 健太" class="staff-image">
+                                        </div>
+                                    </div>
+                                    <div class="staff-content">
+                                        <h4 class="staff-name">田中 健太 <span class="staff-age">28歳</span></h4>
+                                        <span class="department-year">営業部 · 入社3年目</span>
+                                        <div class="staff-quote">
+                                            <i class="fas fa-quote-left quote-icon"></i>
+                                            <p class="staff-text">前職はまったく異なる業界でしたが、充実した研修のおかげで安心してスタートできました。仲間と切磋琢磨しながら成長できる環境で、毎日やりがいを感じています。</p>
+                                        </div>
+                                        <div class="staff-action">
+                                            <span class="staff-more">詳しく見る <i class="fas fa-long-arrow-alt-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 社員2 -->
+                    <div class="staff-card-wrapper">
+                        <div class="staff-card">
+                            <div class="staff-card-inner">
+                                <div class="light-effect"></div>
+                                <div class="decorative-dots"></div>
+                                <div class="decorative-line"></div>
+                                <a href="/pages/interview/" class="text-decoration-none text-reset">
+                                    <div class="staff-image-container">
+                                        <div class="staff-image-border">
+                                            <img src="assets/images/campaign-girls/240_F_1092990759_ojCTf22GLSVCyKE55WRHgAAMefQeReKZ.jpg" alt="佐藤 美優" class="staff-image">
+                                        </div>
+                                    </div>
+                                    <div class="staff-content">
+                                        <h4 class="staff-name">佐藤 美優 <span class="staff-age">32歳</span></h4>
+                                        <span class="department-year">事務部 · 入社5年目</span>
+                                        <div class="staff-quote">
+                                            <i class="fas fa-quote-left quote-icon"></i>
+                                            <p class="staff-text">ワークライフバランスを大切にする社風が魅力です。育児との両立も可能な柔軟な働き方ができるため、長く働き続けることができる環境だと感じています。</p>
+                                        </div>
+                                        <div class="staff-action">
+                                            <span class="staff-more">詳しく見る <i class="fas fa-long-arrow-alt-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 社員3 -->
+                    <div class="staff-card-wrapper">
+                        <div class="staff-card">
+                            <div class="staff-card-inner">
+                                <div class="light-effect"></div>
+                                <div class="decorative-dots"></div>
+                                <div class="decorative-line"></div>
+                                <a href="/pages/interview/" class="text-decoration-none text-reset">
+                                    <div class="staff-image-container">
+                                        <div class="staff-image-border">
+                                            <img src="assets/images/campaign-girls/240_F_504079958_B4NAPSptazWloDgeJCYAoHmVWGlRAsGi.jpg" alt="鈴木 大輔" class="staff-image">
+                                        </div>
+                                    </div>
+                                    <div class="staff-content">
+                                        <h4 class="staff-name">鈴木 大輔 <span class="staff-age">35歳</span></h4>
+                                        <span class="department-year">マネージャー · 入社7年目</span>
+                                        <div class="staff-quote">
+                                            <i class="fas fa-quote-left quote-icon"></i>
+                                            <p class="staff-text">未経験から入社しましたが、今ではチームを率いる立場に。自分の成長を実感できる環境と、挑戦を後押ししてくれる社風が、ANSTEYPEの一番の魅力だと思います。</p>
+                                        </div>
+                                        <div class="staff-action">
+                                            <span class="staff-more">詳しく見る <i class="fas fa-long-arrow-alt-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 社員4 -->
+                    <div class="staff-card-wrapper">
+                        <div class="staff-card">
+                            <div class="staff-card-inner">
+                                <div class="light-effect"></div>
+                                <div class="decorative-dots"></div>
+                                <div class="decorative-line"></div>
+                                <a href="/pages/interview/" class="text-decoration-none text-reset">
+                                    <div class="staff-image-container">
+                                        <div class="staff-image-border">
+                                            <img src="assets/images/campaign-girls/1000_F_1040969700_zi5YgjcK69J3GNVdlXDzGBOpwUKVZDqh.jpg" alt="山本 直樹" class="staff-image">
+                                        </div>
+                                    </div>
+                                    <div class="staff-content">
+                                        <h4 class="staff-name">山本 直樹 <span class="staff-age">30歳</span></h4>
+                                        <span class="department-year">プロモーション部 · 入社4年目</span>
+                                        <div class="staff-quote">
+                                            <i class="fas fa-quote-left quote-icon"></i>
+                                            <p class="staff-text">クライアントの課題解決に取り組む中で、自分自身も成長できることが最大の魅力です。常に新しいことにチャレンジできる環境があります。</p>
+                                        </div>
+                                        <div class="staff-action">
+                                            <span class="staff-more">詳しく見る <i class="fas fa-long-arrow-alt-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 社員5 -->
+                    <div class="staff-card-wrapper">
+                        <div class="staff-card">
+                            <div class="staff-card-inner">
+                                <div class="light-effect"></div>
+                                <div class="decorative-dots"></div>
+                                <div class="decorative-line"></div>
+                                <a href="/pages/interview/" class="text-decoration-none text-reset">
+                                    <div class="staff-image-container">
+                                        <div class="staff-image-border">
+                                            <img src="assets/images/campaign-girls/240_F_1092990759_ojCTf22GLSVCyKE55WRHgAAMefQeReKZ.jpg" alt="高橋 恵理" class="staff-image">
+                                        </div>
+                                    </div>
+                                    <div class="staff-content">
+                                        <h4 class="staff-name">高橋 恵理 <span class="staff-age">27歳</span></h4>
+                                        <span class="department-year">人事部 · 入社2年目</span>
+                                        <div class="staff-quote">
+                                            <i class="fas fa-quote-left quote-icon"></i>
+                                            <p class="staff-text">人材の採用から育成まで携わることができ、会社の成長を間近で感じられるやりがいのある仕事です。社員一人ひとりの個性を大切にする文化が素晴らしいです。</p>
+                                        </div>
+                                        <div class="staff-action">
+                                            <span class="staff-more">詳しく見る <i class="fas fa-long-arrow-alt-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 社員6 -->
+                    <div class="staff-card-wrapper">
+                        <div class="staff-card">
+                            <div class="staff-card-inner">
+                                <div class="light-effect"></div>
+                                <div class="decorative-dots"></div>
+                                <div class="decorative-line"></div>
+                                <a href="/pages/interview/" class="text-decoration-none text-reset">
+                                    <div class="staff-image-container">
+                                        <div class="staff-image-border">
+                                            <img src="assets/images/campaign-girls/240_F_504079958_B4NAPSptazWloDgeJCYAoHmVWGlRAsGi.jpg" alt="伊藤 裕太" class="staff-image">
+                                        </div>
+                                    </div>
+                                    <div class="staff-content">
+                                        <h4 class="staff-name">伊藤 裕太 <span class="staff-age">33歳</span></h4>
+                                        <span class="department-year">営業企画部 · 入社6年目</span>
+                                        <div class="staff-quote">
+                                            <i class="fas fa-quote-left quote-icon"></i>
+                                            <p class="staff-text">クライアントとの信頼関係を構築しながら、共に成長できることが何よりの喜びです。多様なプロジェクトに関わる機会があり、日々刺激を受けています。</p>
+                                        </div>
+                                        <div class="staff-action">
+                                            <span class="staff-more">詳しく見る <i class="fas fa-long-arrow-alt-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 社員7 -->
+                    <div class="staff-card-wrapper">
+                        <div class="staff-card">
+                            <div class="staff-card-inner">
+                                <div class="light-effect"></div>
+                                <div class="decorative-dots"></div>
+                                <div class="decorative-line"></div>
+                                <a href="/pages/interview/" class="text-decoration-none text-reset">
+                                    <div class="staff-image-container">
+                                        <div class="staff-image-border">
+                                            <img src="assets/images/campaign-girls/1000_F_1040969700_zi5YgjcK69J3GNVdlXDzGBOpwUKVZDqh.jpg" alt="斎藤 健一" class="staff-image">
+                                        </div>
+                                    </div>
+                                    <div class="staff-content">
+                                        <h4 class="staff-name">斎藤 健一 <span class="staff-age">26歳</span></h4>
+                                        <span class="department-year">開発部 · 入社1年目</span>
+                                        <div class="staff-quote">
+                                            <i class="fas fa-quote-left quote-icon"></i>
+                                            <p class="staff-text">新卒で入社しましたが、先輩方のサポートもあり、すぐに実務に携わることができました。失敗を恐れず挑戦できる社風が、自分の成長を加速させていると感じます。</p>
+                                        </div>
+                                        <div class="staff-action">
+                                            <span class="staff-more">詳しく見る <i class="fas fa-long-arrow-alt-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 社員8 -->
+                    <div class="staff-card-wrapper">
+                        <div class="staff-card">
+                            <div class="staff-card-inner">
+                                <div class="light-effect"></div>
+                                <div class="decorative-dots"></div>
+                                <div class="decorative-line"></div>
+                                <a href="/pages/interview/" class="text-decoration-none text-reset">
+                                    <div class="staff-image-container">
+                                        <div class="staff-image-border">
+                                            <img src="assets/images/campaign-girls/240_F_1092990759_ojCTf22GLSVCyKE55WRHgAAMefQeReKZ.jpg" alt="中村 明美" class="staff-image">
+                                        </div>
+                                    </div>
+                                    <div class="staff-content">
+                                        <h4 class="staff-name">中村 明美 <span class="staff-age">31歳</span></h4>
+                                        <span class="department-year">マーケティング部 · 入社4年目</span>
+                                        <div class="staff-quote">
+                                            <i class="fas fa-quote-left quote-icon"></i>
+                                            <p class="staff-text">データ分析からプロモーション企画まで幅広く携わることができ、マーケターとしての視野が広がりました。チームでの協力体制が整っており、仕事がしやすい環境です。</p>
+                                        </div>
+                                        <div class="staff-action">
+                                            <span class="staff-more">詳しく見る <i class="fas fa-long-arrow-alt-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 社員9 -->
+                    <div class="staff-card-wrapper">
+                        <div class="staff-card">
+                            <div class="staff-card-inner">
+                                <div class="light-effect"></div>
+                                <div class="decorative-dots"></div>
+                                <div class="decorative-line"></div>
+                                <a href="/pages/interview/" class="text-decoration-none text-reset">
+                                    <div class="staff-image-container">
+                                        <div class="staff-image-border">
+                                            <img src="assets/images/campaign-girls/240_F_504079958_B4NAPSptazWloDgeJCYAoHmVWGlRAsGi.jpg" alt="小林 拓也" class="staff-image">
+                                        </div>
+                                    </div>
+                                    <div class="staff-content">
+                                        <h4 class="staff-name">小林 拓也 <span class="staff-age">29歳</span></h4>
+                                        <span class="department-year">営業部 · 入社5年目</span>
+                                        <div class="staff-quote">
+                                            <i class="fas fa-quote-left quote-icon"></i>
+                                            <p class="staff-text">お客様の課題解決のために一緒に考え、提案することにやりがいを感じています。実力主義の環境で、自分の頑張りが評価される会社だと思います。</p>
+                                        </div>
+                                        <div class="staff-action">
+                                            <span class="staff-more">詳しく見る <i class="fas fa-long-arrow-alt-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 社員10 -->
+                    <div class="staff-card-wrapper">
+                        <div class="staff-card">
+                            <div class="staff-card-inner">
+                                <div class="light-effect"></div>
+                                <div class="decorative-dots"></div>
+                                <div class="decorative-line"></div>
+                                <a href="/pages/interview/" class="text-decoration-none text-reset">
+                                    <div class="staff-image-container">
+                                        <div class="staff-image-border">
+                                            <img src="assets/images/campaign-girls/240_F_1092990759_ojCTf22GLSVCyKE55WRHgAAMefQeReKZ.jpg" alt="渡辺 里奈" class="staff-image">
+                                        </div>
+                                    </div>
+                                    <div class="staff-content">
+                                        <h4 class="staff-name">渡辺 里奈 <span class="staff-age">34歳</span></h4>
+                                        <span class="department-year">総務部 · 入社7年目</span>
+                                        <div class="staff-quote">
+                                            <i class="fas fa-quote-left quote-icon"></i>
+                                            <p class="staff-text">社内の環境整備から福利厚生まで、社員が働きやすい環境づくりに貢献できることにやりがいを感じています。多様な働き方を支援する制度が充実しています。</p>
+                                        </div>
+                                        <div class="staff-action">
+                                            <span class="staff-more">詳しく見る <i class="fas fa-long-arrow-alt-right"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5 staggered-item">
+                    <a href="/pages/interview/" class="btn-animated-link">インタビュー一覧 <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section section-with-number fade-in-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center section-title-wrapper">
+                            <h2 class="section-title concept-section-title">CONTACT</h2>
+                            <p class="section-subtitle text-center">
+                                <span class="refined-concept">お気軽にお問い合わせください</span>
+                            </p>
+                        </div>
+                        
+                        <div class="card-effect p-4 text-center contact-card staggered-item">
+                            <h3 class="mb-3">どんなことでもご相談ください</h3>
+                            <p>
+                                採用に関するお問い合わせ、サービスについてのご質問など<br>
+                                どんなことでもお気軽にご連絡ください。
+                            </p>
+                            <div class="contact-buttons mt-4 staggered-item">
+                                <a href="/pages/contact/" class="btn-animated-link">お問い合わせフォーム <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>株式会社ANSTEYPE</h3>
+                    <p>〒344-0067<br>埼玉県春日部市中央1丁目2番2号7F</p>
+                    <p>TEL: 048-872-6881</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="footer-links">
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/pages/about/">ABOUT US</a></li>
+                        <li><a href="/pages/recruit/">RECRUIT</a></li>
+                        <li><a href="/pages/interview/">INTERVIEWS</a></li>
+                        <li><a href="/pages/contact/">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 ANSTEYPE</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script>
+        // 統一されたスクロールエフェクトの実装
+        document.addEventListener('DOMContentLoaded', function() {
+            // スクロール検出関数
+            const fadeInSections = document.querySelectorAll('.fade-in-section');
+            const sectionTitleWrappers = document.querySelectorAll('.section-title-wrapper');
+            const staggeredItems = document.querySelectorAll('.staggered-item');
+            
+            const isElementInViewport = (el) => {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                    rect.bottom >= 0
+                );
+            };
+            
+            const handleScroll = () => {
+                // セクション全体のフェードイン
+                fadeInSections.forEach(section => {
+                    if (isElementInViewport(section) && !section.classList.contains('is-visible')) {
+                        section.classList.add('is-visible');
+                    }
+                });
+                
+                // セクションタイトルエフェクト
+                sectionTitleWrappers.forEach(titleWrapper => {
+                    if (isElementInViewport(titleWrapper) && !titleWrapper.classList.contains('is-visible')) {
+                        titleWrapper.classList.add('is-visible');
+                    }
+                });
+                
+                // スタガードアイテム（時間差表示）
+                staggeredItems.forEach(item => {
+                    if (isElementInViewport(item) && !item.classList.contains('is-visible')) {
+                        item.classList.add('is-visible');
+                    }
+                });
+                
+                // ヘッダースクロールスタイル
+                if (window.scrollY > 50) {
+                    document.querySelector('.header').classList.add('scrolled');
+                } else {
+                    document.querySelector('.header').classList.remove('scrolled');
+                }
+                
+                // フッターが近づいたらヒーロービデオとオーバーレイを非表示にする
+                const footer = document.querySelector('.footer');
+                const heroVideo = document.querySelector('.hero-video');
+                const heroOverlay = document.querySelector('.hero-overlay');
+                const heroContent = document.querySelector('.hero-content-wrapper');
+                
+                if (footer) {
+                    const footerTop = footer.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    // フッターが画面の下部に近づいてきたら
+                    if (footerTop < windowHeight * 1.2) {
+                        // ヒーロー要素を非表示に
+                        if (heroVideo) heroVideo.style.opacity = '0';
+                        if (heroOverlay) heroOverlay.style.opacity = '0';
+                        if (heroContent) heroContent.style.opacity = '0';
+                    } else {
+                        // それ以外は表示
+                        if (heroVideo) heroVideo.style.opacity = '1';
+                        if (heroOverlay) heroOverlay.style.opacity = '1';
+                        if (heroContent) heroContent.style.opacity = '1';
+                    }
+                }
+                
+                // 左右交互のセクションに視差効果を追加
+                const sections = document.querySelectorAll('.section-with-number');
+                sections.forEach((section, index) => {
+                    // 視差効果を適用しない（中央配置を維持）
+                    return;
+                    
+                    const rect = section.getBoundingClientRect();
+                    const offsetY = (window.innerHeight - rect.top) * 0.05;
+                    
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        // 偶数と奇数で違う動きをつける
+                        if (index % 2 === 0) {
+                            section.style.transform = `translateX(${offsetY}px)`;
+                        } else {
+                            section.style.transform = `translateX(${-offsetY}px)`;
+                        }
+                    }
+                });
+            };
+            
+            // 初期表示とスクロールイベント
+            handleScroll();
+            window.addEventListener('scroll', handleScroll);
+            
+            // ヒーローからコンセプトへのシームレスなトランジション
+            // スクロールトリガーアニメーション
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // トランジションオーバーレイアニメーション
+            gsap.to(".page-transition-overlay", {
+                scrollTrigger: {
+                    trigger: ".hero",
+                    start: "80% top",
+                    end: "bottom top",
+                    scrub: true
+                },
+                scaleY: 1.3,
+                opacity: 0,
+                ease: "power2.inOut"
+            });
+            
+            // カウンターアップアニメーション
+            const counterElements = document.querySelectorAll('.counter-up');
+            counterElements.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                let current = 0;
+                const duration = 2000; // ミリ秒
+                const increment = target / (duration / 50); // 50msごとに更新
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            let timer = setInterval(() => {
+                                current += increment;
+                                if (current >= target) {
+                                    counter.textContent = target;
+                                    clearInterval(timer);
+                                    return;
+                                }
+                                counter.textContent = Math.ceil(current);
+                            }, 50);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(counter);
+            });
+
+            // スタッフカルーセル効果の強化
+            const staffCarousel = document.querySelector('.staff-testimonials');
+            
+            // ビューポートに表示されたときに流れるアニメーションを開始
+            const startCarouselAnimation = () => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        const cards = entry.target.querySelectorAll('.staff-card-wrapper');
+                        
+                        if (entry.isIntersecting) {
+                            // アニメーションをリセットして再開
+                            cards.forEach(card => {
+                                card.style.animationPlayState = 'running';
+                            });
+                        } else {
+                            // 画面外のときはアニメーションを一時停止
+                            cards.forEach(card => {
+                                card.style.animationPlayState = 'paused';
+                            });
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                if (staffCarousel) {
+                    observer.observe(staffCarousel);
+                }
+            };
+            
+            // ホバー時にカルーセルを一時停止
+            const setupHoverPause = () => {
+                if (!staffCarousel) return;
+                
+                const cards = staffCarousel.querySelectorAll('.staff-card');
+                
+                cards.forEach(card => {
+                    card.addEventListener('mouseenter', () => {
+                        const allCards = staffCarousel.querySelectorAll('.staff-card-wrapper');
+                        allCards.forEach(cardWrapper => {
+                            cardWrapper.style.animationPlayState = 'paused';
+                        });
+                    });
+                    
+                    card.addEventListener('mouseleave', () => {
+                        const allCards = staffCarousel.querySelectorAll('.staff-card-wrapper');
+                        allCards.forEach(cardWrapper => {
+                            cardWrapper.style.animationPlayState = 'running';
+                        });
+                    });
+                });
+            };
+            
+            // ウィンドウサイズ変更時の処理
+            const handleResize = () => {
+                if (!staffCarousel) return;
+                
+                // モバイル表示時はアニメーションを無効化
+                const isMobile = window.innerWidth < 768;
+                const cardWrappers = staffCarousel.querySelectorAll('.staff-card-wrapper');
+                
+                cardWrappers.forEach(cardWrapper => {
+                    if (isMobile) {
+                        cardWrapper.style.animation = 'none';
+                        cardWrapper.style.transform = 'translateX(0)';
+                    } else {
+                        cardWrapper.style.animation = 'slideCards 90s linear infinite';
+                    }
+                });
+            };
+            
+            // 初期化関数
+            const initStaffCarousel = () => {
+                startCarouselAnimation();
+                setupHoverPause();
+                handleResize();
+                
+                window.addEventListener('resize', handleResize);
+            };
+            
+            // 初期化
+            initStaffCarousel();
+        });
+        
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true
+        });
+    </script>
+</body>
+</html> 

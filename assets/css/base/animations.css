@@ -1,0 +1,204 @@
+/**
+ * アニメーションスタイル
+ * キーフレーム、トランジション定義
+ */
+
+/* 基本フェードイン */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--transition-medium) ease, 
+              transform var(--transition-medium) ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 上からフェードイン */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity var(--transition-medium) ease, 
+              transform var(--transition-medium) ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 下からフェードイン */
+.fade-in-down {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--transition-medium) ease, 
+              transform var(--transition-medium) ease;
+}
+
+.fade-in-down.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ズームイン */
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity var(--transition-medium) ease, 
+              transform var(--transition-medium) ease;
+}
+
+.zoom-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* バウンスイン */
+.bounce-in {
+  opacity: 0;
+  transform: scale(0.3);
+  transition: opacity var(--transition-medium) cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              transform var(--transition-medium) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bounce-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 回転イン */
+.rotate-in {
+  opacity: 0;
+  transform: rotate(-15deg) scale(0.9);
+  transform-origin: center;
+  transition: opacity var(--transition-medium) ease, 
+              transform var(--transition-medium) ease;
+}
+
+.rotate-in.visible {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+/* タイピングエフェクト */
+.typing-effect {
+  visibility: visible;
+  position: relative;
+}
+
+.typing-effect::after {
+  content: '|';
+  position: absolute;
+  right: -8px;
+  animation: blink 0.8s infinite;
+}
+
+.typing-effect.typing-complete::after {
+  display: none;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* テキストシャドウパルス */
+@keyframes textShadowPulse {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* テキスト表示 */
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 無限スクロール */
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
+/* 震える効果 */
+.shake-effect {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/* グラデーションテキスト */
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* テキストシマーアニメーション - 背景画像の左右移動を停止 */
+@keyframes textShimmer {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: center;
+  }
+  100% {
+    background-position: center;
+  }
+}
+
+/* textShimmerアニメーションを使用している全ての要素でアニメーションを無効化 */
+*[style*="animation: textShimmer"],
+*[class*="textShimmer"] {
+  animation: none !important;
+  background-position: center !important;
+}

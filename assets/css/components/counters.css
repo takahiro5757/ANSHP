@@ -1,0 +1,85 @@
+/**
+ * カウンター
+ * 数値カウンター要素の共通スタイル
+ */
+
+/* カウンターアイテム */
+.counter-item {
+  text-align: center;
+  padding: 1rem 0.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+.counter-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 4px;
+  background: url('/assets/images/backgrounds/blue-gradient.webp') center/200% 200%;
+  background-position: center;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.counter-item:hover::before {
+  width: 80px;
+}
+
+/* カウンター数値 */
+.counter-up {
+  font-size: 2.5rem;
+  font-weight: 900;
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #4A90E2;
+  background: url('/assets/images/backgrounds/blue-gradient.webp') center/200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-position: center;
+}
+
+/* フォールバック対応 */
+@supports not (-webkit-background-clip: text) {
+  .counter-up {
+    color: #4A90E2 !important;
+    -webkit-text-fill-color: #4A90E2 !important;
+  }
+}
+
+/* カウンターラベル */
+.counter-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4A90E2;
+  line-height: 1.3;
+  background: url('/assets/images/backgrounds/blue-gradient.webp') center/200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-position: center;
+}
+
+/* フォールバック対応 */
+@supports not (-webkit-background-clip: text) {
+  .counter-label {
+    color: #4A90E2 !important;
+    -webkit-text-fill-color: #4A90E2 !important;
+  }
+}
+
+/* --- 強制表示デバッグ用 --- */
+.counter-up, .counter-label {
+  color: #4A90E2 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+} 

@@ -1,0 +1,198 @@
+/**
+ * ページヒーローセクション用のスタイル
+ * すべての下層ページで使用するヒーローセクションのスタイル
+ * 更新: 2024-01-23 - 一般採用・アルバイト専用背景画像追加
+ */
+
+/* ページヒーロー基本スタイル */
+.page-title {
+  padding: 60px 0 30px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  color: white !important;
+  text-align: center !important;
+  margin-bottom: 0 !important;
+  position: relative !important;
+  height: 500px !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: hidden !important;
+}
+
+/* ページ背景の共通設定 */
+.page-title.about-bg {
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 144, 226, 0.6)), url('../../images/hero/assets_task_01jv471sbnewdb6btek38bfyh9_1747119645_img_1.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.page-title.recruit-bg {
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 144, 226, 0.6)), url('../../images/hero/recruit_HERO.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.page-title.general-recruit-bg {
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 144, 226, 0.6)), url('../../images/hero/general_recruitment_HERO.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.page-title.part-time-bg {
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 144, 226, 0.6)), url('../../images/hero/part_time_jobs_HERO.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.page-title.interview-bg {
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 123, 209, 0.6)), url('../../images/hero/interviews_HERO.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.page-title.contact-bg {
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 144, 226, 0.6)), url('../../images/hero/contact_HERO.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.page-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../images/bg-dots.webp') repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.page-title .container {
+  position: relative !important;
+  z-index: 2 !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.page-title .container * {
+  text-align: center !important;
+}
+
+.page-title h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.page-title .lead {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+  text-align: center !important;
+}
+
+.typing-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.typing-effect::after {
+  content: '|';
+  position: absolute;
+  right: -10px;
+  animation: blink 0.7s infinite;
+}
+
+.typing-complete::after {
+  display: none;
+}
+
+/* スクロールインディケーター */
+.scroll-indicator {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: scrollFadeInUp 1.5s infinite;
+  z-index: 10;
+}
+
+.scroll-indicator i {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.scroll-indicator span {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@keyframes scrollFadeInUp {
+  0% {
+    transform: translate(-50%, 10px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 0.6;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .page-title {
+    height: 400px !important;
+  }
+  
+  .page-title h1 {
+    font-size: 3rem;
+  }
+  
+  .page-title .lead {
+    font-size: 1.2rem;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-title {
+    height: 350px !important;
+  }
+  
+  .page-title h1 {
+    font-size: 2.5rem;
+  }
+  
+  .page-title .lead {
+    font-size: 1rem;
+  }
+} 

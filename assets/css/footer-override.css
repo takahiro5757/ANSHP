@@ -1,0 +1,48 @@
+/**
+ * フッター背景色強制上書きファイル
+ * 他のCSSファイルによる上書きを防ぐため、最高優先度で設定
+ */
+
+/* フッター背景色の強制設定 */
+.footer,
+footer,
+section.footer,
+div.footer,
+.footer-section,
+#footer,
+body .footer,
+html .footer {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  background-image: none !important;
+  background-attachment: initial !important;
+  background-blend-mode: initial !important;
+  background-clip: initial !important;
+  background-origin: initial !important;
+  background-position: initial !important;
+  background-repeat: initial !important;
+  background-size: initial !important;
+}
+
+/* フッター内のテキスト色も確実に設定 */
+.footer *,
+footer *,
+section.footer *,
+div.footer * {
+  color: #333333 !important;
+}
+
+/* フッターリンクの色設定 */
+.footer a,
+footer a,
+section.footer a,
+div.footer a {
+  color: #333333 !important;
+}
+
+.footer a:hover,
+footer a:hover,
+section.footer a:hover,
+div.footer a:hover {
+  color: #4A7BD1 !important;
+} 

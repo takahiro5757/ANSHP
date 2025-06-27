@@ -1,0 +1,1271 @@
+/**
+ * ホームページスタイル
+ * トップページ専用のスタイル
+ */
+
+/* ヒーローセクション */
+.hero {
+  height: 100vh;
+  min-height: 800px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #000;
+  padding-bottom: 0;
+}
+
+.hero-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.hero-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* カーソル追従効果 */
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(74, 144, 226, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero.cursor-active::after {
+  opacity: 1;
+}
+
+.hero-content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  color: var(--white);
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  padding: 0 20px;
+  opacity: 1;
+}
+
+.hero-title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  letter-spacing: 0.1em;
+  opacity: 1;
+  position: relative;
+  text-align: center;
+  animation: textShadowPulse 2s ease-in-out infinite;
+}
+
+.hero-title::after,
+.hero-title.loaded::after,
+h1.hero-title::after,
+.hero-content .hero-title::after {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-m);
+  font-weight: 700;
+  margin-bottom: 3rem;
+  letter-spacing: 0.1em;
+  opacity: 1;
+  text-align: center;
+}
+
+/* スクロールインジケーター */
+.hero-scroll-indicator {
+  display: none;
+}
+
+.chevron {
+  display: none;
+}
+
+.scroll-text {
+  display: none;
+}
+
+/* トランジションオーバーレイ */
+.page-transition-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: transparent;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  opacity: 0;
+  z-index: 2;
+}
+
+/* アニメーションを無効化 */
+.concept-icon,
+.highlight-text,
+.concept-motto,
+.join-us-text,
+.join-emphasis,
+.counter-up,
+.counter-label,
+.blue-text,
+.black-text,
+.business-card-title {
+  animation: none !important;
+}
+
+/* コンセプトセクション専用スタイル */
+.concept-text {
+  position: relative;
+  z-index: 5;
+}
+
+.stacked-item {
+  position: relative;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  border-left: 4px solid var(--primary-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.stacked-item:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.stacked-item:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.stacked-item:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+/* JavaScript制御でvisibleクラスが追加される */
+.stacked-item.visible,
+.fade-up-trigger.visible .stacked-item {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.concept-highlight {
+  position: relative;
+  display: block;
+  padding: 1.2rem 1.8rem 1.2rem 3.5rem;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  color: #333333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.concept-icon {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: #4A90E2;
+  background: url('/assets/images/backgrounds/blue-gradient.webp');
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 4s ease-in-out infinite;
+}
+
+/* フォールバック対応 */
+@supports not (-webkit-background-clip: text) {
+  .concept-icon {
+    color: #4A90E2 !important;
+    -webkit-text-fill-color: #4A90E2 !important;
+  }
+}
+
+.concept-highlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* highlight-text はcomponents/text-effects.cssで定義済み */
+
+.concept-motto {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #4A90E2;
+  background: url('/assets/images/backgrounds/blue-gradient.webp');
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 4s ease-in-out infinite;
+  padding: 0.5rem 2rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+/* フォールバック対応 */
+@supports not (-webkit-background-clip: text) {
+  .concept-motto {
+    color: #4A90E2 !important;
+    -webkit-text-fill-color: #4A90E2 !important;
+  }
+}
+
+/* JOIN USセクション追加スタイル */
+.join-us-text {
+  display: inline-block;
+  color: #4A90E2;
+  background: url('/assets/images/backgrounds/blue-gradient.webp');
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 4s ease-in-out infinite;
+  letter-spacing: 0.05em;
+  font-weight: 800;
+  font-size: 2.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* フォールバック対応 */
+@supports not (-webkit-background-clip: text) {
+  .join-us-text {
+    color: #4A90E2 !important;
+    -webkit-text-fill-color: #4A90E2 !important;
+  }
+}
+
+.join-us-text::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: url('/assets/images/backgrounds/blue-gradient.webp');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  border-radius: 4px;
+  opacity: 0.6;
+}
+
+.join-card-content {
+  margin-bottom: 2rem;
+}
+
+.join-card-message {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: #444;
+}
+
+.join-emphasis {
+  font-weight: 600;
+  color: #4A90E2;
+  background: url('/assets/images/backgrounds/blue-gradient.webp');
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 4s ease-in-out infinite;
+}
+
+/* フォールバック対応 */
+@supports not (-webkit-background-clip: text) {
+  .join-emphasis {
+    color: #4A90E2 !important;
+    -webkit-text-fill-color: #4A90E2 !important;
+  }
+}
+
+/* カウンター関連はcomponents/counters.cssで定義済み */
+
+/* コンテンツエリア全体に背景画像を設定 */
+.content-after-hero {
+  position: relative;
+  background: url('/assets/images/backgrounds/gradation.png');
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 20;
+  margin-top: -5px;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* セクションの共通スタイル調整 */
+.section {
+  padding: 60px 0; /* 余白をさらに縮小 */
+  position: relative;
+  overflow: hidden;
+}
+
+/* 左右交互に配置するためのスタイル */
+.section-with-number {
+  position: relative;
+  padding: 60px 0; /* 余白をさらに縮小 */
+  clip-path: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* 偶数番目のセクションのスタイル修正 */
+.section-with-number:nth-child(even) {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.section-with-number:nth-child(even) .container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1100px;
+}
+
+/* 奇数番目のセクションのスタイル修正 */
+.section-with-number:nth-child(odd) {
+  background: url('/assets/images/backgrounds/gradation2.png');
+  background-size: cover;
+}
+
+.section-with-number:nth-child(odd) .container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1100px;
+}
+
+/* セクション内のコンテナを中央配置 */
+.section-with-number .container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* セクション間のディバイダーを調整 */
+.section-divider {
+  height: 3px;
+  background: var(--gradient-blue-light);
+  width: 60%;
+  margin: 0 auto;
+  opacity: 0.8;
+  position: relative;
+  z-index: 10;
+  padding: 0;
+}
+
+/* セクションにシャドウ効果を追加 */
+.section-with-number {
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  margin: 50px 0;
+  border-radius: 10px;
+}
+
+/* 各セクションの角を丸くする */
+#whats-ansteype {
+  border-radius: 10px;
+  margin-top: 0;
+}
+
+#business {
+  border-radius: 10px;
+}
+
+#join-us {
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+#interview {
+  padding: 80px 0 100px; /* 下部のパディングを増やす */
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  margin: 50px 0;
+  max-width: 100%;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+/* 青丸装飾を完全に削除 */
+.bg-decoration, .bg-decoration-2 {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  z-index: -9999 !important;
+}
+
+/* インタビューセクションのタイトル調整 */
+#interview .section-title {
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+}
+
+#interview .section-subtitle {
+  max-width: 800px;
+  margin: 0 auto 4rem auto; /* 下部マージンを増やす */
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+}
+
+#interview .campaign-card {
+  background-color: #ffffff !important;
+  border: 1px solid #f0f0f0;
+}
+
+#contact {
+  border-radius: 10px;
+  margin-bottom: 100px;
+}
+
+/* 各セクションのタイトルスタイルを強化 */
+.section-title {
+  position: relative;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  display: inline-block;
+  color: #000000;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #000000;
+  border-radius: 2px;
+}
+
+/* ビジネスカードのスタイル調整 */
+.business-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px 25px;
+  min-height: 280px;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+  padding-top: 30px;
+}
+
+.business-card-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.business-card-icon i {
+  font-size: 24px;
+  background: url('/assets/images/backgrounds/blue-gradient.webp');
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 4s ease-in-out infinite;
+}
+
+.business-card-circle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 60px;
+  height: 60px;
+  background: url('/assets/images/backgrounds/blue-gradient.webp');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  z-index: 2;
+  opacity: 0.4;
+}
+
+.business-card-title {
+  background: url('/assets/images/backgrounds/blue-gradient.webp');
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 4s ease-in-out infinite;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.business-card p {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.business-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* コンセプトカードのスタイル調整 */
+.concept-highlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* JOIN USセクションの調整 */
+.card-effect {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.card-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* インタビューセクションの調整 */
+.campaign-card {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin: 0;
+  flex: 0 0 auto;
+  width: calc(33.333% - 20px);
+  max-width: 340px;
+}
+
+.campaign-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* インタビューセクションのカルーセル */
+.campaign-carousel {
+  margin: 4rem auto;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  max-width: 1100px;
+}
+
+.campaign-carousel-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 0;
+  gap: 30px;
+}
+
+.campaign-carousel-inner::-webkit-scrollbar {
+  display: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 992px) {
+  .section-with-number:nth-child(even) .container,
+  .section-with-number:nth-child(odd) .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+  }
+  
+  .section-with-number {
+    padding: 80px 0;
+    margin: 30px 0;
+  }
+  
+  #whats-ansteype {
+    margin-top: 60px;
+  }
+  
+  #contact {
+    margin-bottom: 60px;
+  }
+  
+  .campaign-card {
+    width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 576px) {
+  .campaign-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* ページ固有のインラインスタイル */
+/* セクション余白調整用のスタイル追加 */
+.section {
+    padding: 60px 0; /* 余白をさらに縮小 */
+}
+.section-with-number {
+    position: relative;
+    padding: 60px 0; /* 余白をさらに縮小 */
+}
+
+/* スクロールドット */
+.scroll-dot {
+    display: none;
+}
+
+/* セクションタイトルとコンテンツの中央配置を強化 */
+.section-title-wrapper {
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.concept-section-title {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-subtitle {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* 各セクションのコンテンツ中央配置 */
+#whats-ansteype .row,
+#business .row,
+#join-us .row,
+#contact .row {
+  justify-content: center;
+  width: 100%;
+}
+
+/* Business カードの配置調整 */
+.business-cards {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+/* JOIN USセクションのカード配置調整 */
+.card-effect {
+  margin: 0 auto;
+}
+
+/* フッターにも高いz-indexを設定してヒーローコンテンツの上に表示 */
+.footer {
+  position: relative;
+  z-index: 30;
+}
+
+/* ビジネスカードのグリッド */
+.business-cards {
+  margin-top: 30px;
+}
+
+/* ビジネスセクション全体の調整 */
+#business .section-subtitle {
+  margin-bottom: 0;
+}
+
+/* テキストのカラー効果強化 */
+.blue-text {
+  background: url('/assets/images/backgrounds/blue-gradient.webp');
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 4s ease-in-out infinite;
+  font-weight: 700;
+}
+
+.black-text {
+  background: url('/assets/images/backgrounds/blue-gradient.webp');
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 4s ease-in-out infinite;
+  font-weight: 700;
+}
+
+.emphasis-text {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  display: block;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.refined-concept {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: #333;
+}
+
+/* セクションタイトル周りの調整 */
+.concept-section-title {
+  font-size: 3rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  color: #000000;
+  display: inline-block;
+  position: relative;
+}
+
+.concept-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #000000;
+  border-radius: 2px;
+}
+
+/* セクション間の間隔調整 */
+.section-with-number + .section-divider + .section-with-number {
+  margin-top: 80px;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+  .hero-content-wrapper {
+    align-items: center;
+  }
+  
+  .section-with-number {
+    margin: 30px 0;
+    padding: 60px 0;
+  }
+  
+  #interview {
+    padding: 60px 0;
+  }
+  
+  .concept-section-title {
+    font-size: 2.2rem;
+  }
+  
+  .emphasis-text {
+    font-size: 1.5rem;
+  }
+}
+
+/* カード効果の強化 */
+.business-card, .concept-highlight, .card-effect, .campaign-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.business-card::before, .concept-highlight::before, .card-effect::before, .campaign-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(30deg);
+  transition: all 1.5s ease;
+  opacity: 0;
+}
+
+.business-card:hover::before, .concept-highlight:hover::before, .card-effect:hover::before, .campaign-card:hover::before {
+  left: 100%;
+  opacity: 1;
+}
+
+/* 左右交互配置の上書き（インタビューセクション用） */
+.section-with-number#interview {
+  clip-path: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  background: transparent !important;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 10px !important;
+  max-width: 100% !important;
+}
+
+.section-with-number#interview.fade-in-section {
+  transform: none !important;
+}
+
+.section-with-number#interview .campaign-carousel {
+  max-width: 1100px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* インタビューセクションの内部構造調整 */
+.interview-content {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#join-us .card-effect,
+#join-us .card-effect.text-center {
+  background-color: #ffffff !important;
+  border: 1px solid #f0f0f0;
+  padding: 1.2rem !important;
+}
+
+/* スタッフカルーセルコンテナ */
+.staff-testimonials {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 30px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 25px; /* カード間の間隔を調整 */
+  margin: 30px 0;
+}
+
+/* カードラッパー */
+.staff-card-wrapper {
+  flex: 0 0 auto;
+  width: 320px; /* カード幅を採用情報ページに合わせて調整 */
+  animation: slideCards 90s linear infinite;
+}
+
+/* スタッフカード改善 */
+.staff-card {
+  position: relative;
+  height: 100%;
+  min-height: 480px; /* 最小高さを設定 */
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  margin-bottom: 0;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transform: translateY(0);
+}
+
+.staff-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 40px rgba(74, 144, 226, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(74, 144, 226, 0.3);
+}
+
+.staff-card-inner {
+  padding: 30px 25px 60px; /* 下部パディングを増やして、ボタンのスペースを確保 */
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* 相対配置に変更 */
+}
+
+/* プロフィール画像修正 */
+.staff-image-container {
+  width: 140px; /* サイズを少し調整 */
+  height: 140px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.staff-image-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 2px solid rgba(74, 144, 226, 0.3);
+  transition: all 0.4s ease;
+}
+
+.staff-card:hover .staff-image-border {
+  border-radius: 50%;
+  border-color: #4a90e2;
+  transform: scale(1.05);
+}
+
+.staff-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.staff-card:hover .staff-image {
+  border-radius: 50%;
+  transform: scale(0.95);
+}
+
+/* スタッフ情報 */
+.staff-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+  transition: all 0.4s ease;
+}
+
+.staff-card:hover .staff-name {
+  color: #4a90e2;
+}
+
+.staff-age {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-left: 5px;
+}
+
+.department-year {
+  display: block;
+  padding: 8px 20px;
+  background-color: rgba(74, 144, 226, 0.15);
+  border-radius: 30px;
+  font-size: 0.9rem;
+  color: #4a7bd1;
+  transition: all 0.4s ease;
+  margin: 0 auto 20px;
+  width: fit-content;
+}
+
+.staff-card:hover .department-year {
+  background-color: rgba(74, 144, 226, 0.25);
+}
+
+.position-dot {
+  display: none;
+}
+
+/* 引用テキスト */
+.staff-quote {
+  position: relative;
+  padding: 0 5px 10px; /* パディングを調整 */
+  display: flex; 
+  flex-direction: column;
+  margin-top: 5px;
+  margin-bottom: 50px; /* ボタン用のスペースを確保 */
+}
+
+.quote-icon {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  color: rgba(74, 144, 226, 0.2);
+  font-size: 1.5rem; /* サイズを調整 */
+}
+
+.staff-card:hover .quote-icon {
+  color: rgba(74, 144, 226, 0.3);
+}
+
+.staff-text {
+  font-size: 0.9rem; /* フォントサイズを調整 */
+  line-height: 1.6;
+  color: #555;
+  text-align: left;
+  overflow: hidden; /* 長いテキストを制御 */
+  display: -webkit-box;
+  -webkit-line-clamp: 7; /* 最大7行表示 */
+  -webkit-box-orient: vertical;
+}
+
+.staff-card:hover .staff-text {
+  color: #333;
+}
+
+/* 詳細ボタン */
+.staff-action {
+  position: absolute; /* 絶対配置に変更 */
+  bottom: 25px; /* 下からの位置を指定 */
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10; /* 上位レイヤーに */
+  pointer-events: auto; /* クリック可能に */
+}
+
+.staff-more {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: rgba(74, 144, 226, 0.05);
+  color: #4a7bd1;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
+  position: relative; /* 相対配置 */
+  z-index: 10; /* 確実に表示されるよう高いz-indexを設定 */
+}
+
+.staff-card:hover .staff-more {
+  background-color: rgba(74, 144, 226, 0.15);
+  color: #4a90e2;
+}
+
+.staff-more i {
+  margin-left: 5px;
+  transition: transform 0.4s ease;
+}
+
+.staff-card:hover .staff-more i {
+  transform: translateX(5px);
+}
+
+/* 装飾要素 */
+.light-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1; /* 装飾要素のz-indexを下げる */
+}
+
+.staff-card:hover .light-effect {
+  opacity: 1;
+}
+
+.decorative-dots {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  bottom: 20px;
+  right: 20px;
+  background-image: radial-gradient(#4a7bd1 1px, transparent 1px);
+  background-size: 8px 8px;
+  opacity: 0.15;
+  transition: all 0.4s ease;
+  z-index: 1; /* 装飾要素のz-indexを下げる */
+  pointer-events: none;
+}
+
+.staff-card:hover .decorative-dots {
+  transform: rotate(10deg) scale(1.1);
+  opacity: 0.3;
+}
+
+.decorative-line {
+  position: absolute;
+  width: 3px;
+  height: 40px;
+  top: 20px;
+  left: 20px;
+  background: url('/assets/images/backgrounds/blue-gradient.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  transition: all 0.4s ease;
+  z-index: 1; /* 装飾要素のz-indexを下げる */
+  pointer-events: none;
+}
+
+.staff-card:hover .decorative-line {
+  transform: scaleY(1.1);
+  opacity: 0.2;
+}
+
+/* カードスライドアニメーション */
+@keyframes slideCards {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-1000%); /* 10枚分のカードが流れる距離 */
+  }
+}
+
+/* スタッフカードのコピーを作成してループ表示 */
+.staff-testimonials:hover .staff-card-wrapper {
+  animation-play-state: paused;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 992px) {
+  .staff-card-wrapper {
+    width: 300px;
+  }
+  
+  .staff-card {
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .staff-card-wrapper {
+    width: 280px;
+  }
+  
+  .staff-card {
+    min-height: 420px;
+  }
+  
+  .staff-image-container {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .staff-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .staff-card-wrapper {
+    width: 260px;
+  }
+  
+  .staff-card {
+    min-height: 400px;
+  }
+  
+  .staff-name {
+    font-size: 1.1rem;
+  }
+  
+  .staff-text {
+    font-size: 0.85rem;
+  }
+}
+
+.staff-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative; /* 相対配置に変更 */
+  z-index: 2; /* z-indexを追加 */
+}
+

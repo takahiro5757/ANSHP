@@ -1,0 +1,137 @@
+/**
+ * タイポグラフィスタイル
+ * フォント定義、見出し、段落など
+ */
+
+/* 見出し */
+h1, .h1 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+h2, .h2 {
+  font-size: var(--font-size-l);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+h3, .h3 {
+  font-size: var(--font-size-m);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+h4, .h4 {
+  font-size: calc(var(--font-size-base) * 1.25);
+  font-weight: 600;
+}
+
+h5, .h5 {
+  font-size: calc(var(--font-size-base) * 1.1);
+  font-weight: 600;
+}
+
+h6, .h6 {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+/* 段落と各種テキスト */
+p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.lead {
+  font-size: calc(var(--font-size-base) * 1.15);
+  font-weight: 300;
+}
+
+/* テキスト装飾 */
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.text-dark {
+  color: var(--dark-gray);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* フォントウェイト */
+.font-weight-light {
+  font-weight: 300;
+}
+
+.font-weight-normal {
+  font-weight: 400;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}
+
+.font-weight-black {
+  font-weight: 900;
+}
+
+/* テキスト装飾クラス */
+.blue-text {
+  color: var(--secondary-color);
+  transition: color var(--transition-fast) ease;
+}
+
+.black-text {
+  color: var(--primary-color);
+  transition: color var(--transition-fast) ease;
+  font-weight: 900;
+}
+
+.emphasis-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* テキストエフェクト */
+.gradient-text,
+.gradient-text *,
+h1.gradient-text,
+h2.gradient-text,
+h3.gradient-text,
+.section-title.gradient-text,
+.concept-section-title.gradient-text,
+*[class*="gradient-text"] {
+  background: none !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: #000000 !important;
+  background-clip: initial !important;
+  color: #000000 !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
