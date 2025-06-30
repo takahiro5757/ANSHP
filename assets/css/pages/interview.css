@@ -48,7 +48,7 @@ body:has(.page-title) .header.scrolled .menu-button span {
 
 /* インタビューページのヒーロー背景 - 更新: 2024-01-23 */
 .page-title.interview-bg {
-  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 123, 209, 0.6)), url('../../images/hero/interviews_HERO.jpg') !important;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(74, 123, 209, 0.6)), url('/assets/images/hero/interviews_HERO.jpg') !important;
   background-size: cover !important;
   background-position: center !important;
   opacity: 1 !important;

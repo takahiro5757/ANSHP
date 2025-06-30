@@ -38,7 +38,7 @@
 
 /* 背景画像 - インラインスタイルを移行 */
 .interview-bg {
-  background-image: url('../../../assets/images/interviews/assets_task_01jv94s2xde7xax4g8v5657www_1747285005_img_3.webp') !important;
+  background-image: url('/assets/images/interviews/assets_task_01jv94s2xde7xax4g8v5657www_1747285005_img_3.webp') !important;
   background-size: cover !important;
   background-position: center !important;
   opacity: 1 !important;
