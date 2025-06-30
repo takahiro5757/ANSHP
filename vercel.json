@@ -6,46 +6,42 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/",
-      "dest": "/index.html"
+      "source": "/pages/about",
+      "destination": "/pages/about/index.html"
     },
     {
-      "src": "/pages/about",
-      "dest": "/pages/about/index.html"
+      "source": "/pages/contact",
+      "destination": "/pages/contact/index.html"
     },
     {
-      "src": "/pages/contact",
-      "dest": "/pages/contact/index.html"
+      "source": "/pages/recruit",
+      "destination": "/pages/recruit/index.html"
     },
     {
-      "src": "/pages/recruit",
-      "dest": "/pages/recruit/index.html"
+      "source": "/pages/interview",
+      "destination": "/pages/interview/index.html"
     },
     {
-      "src": "/pages/interview",
-      "dest": "/pages/interview/index.html"
+      "source": "/pages/interview/tanaka",
+      "destination": "/pages/interview/tanaka/index.html"
     },
     {
-      "src": "/pages/interview/tanaka",
-      "dest": "/pages/interview/tanaka/index.html"
+      "source": "/pages/interview/sato",
+      "destination": "/pages/interview/sato/index.html"
     },
     {
-      "src": "/pages/interview/sato",
-      "dest": "/pages/interview/sato/index.html"
+      "source": "/pages/interview/suzuki",
+      "destination": "/pages/interview/suzuki/index.html"
     },
     {
-      "src": "/pages/interview/suzuki",
-      "dest": "/pages/interview/suzuki/index.html"
+      "source": "/pages/recruit/general",
+      "destination": "/pages/recruit/general/index.html"
     },
     {
-      "src": "/pages/recruit/general",
-      "dest": "/pages/recruit/general/index.html"
-    },
-    {
-      "src": "/pages/recruit/part-time",
-      "dest": "/pages/recruit/part-time/index.html"
+      "source": "/pages/recruit/part-time",
+      "destination": "/pages/recruit/part-time/index.html"
     }
   ]
 } 
